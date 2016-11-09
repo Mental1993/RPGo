@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mydb = new DatabaseHelper(this);
+        ETuser = (EditText) findViewById(R.id.editText);
+        ETpwd = (EditText) findViewById(R.id.editText2);
+        btn = (Button) findViewById(R.id.button);
+        btn2 = (Button) findViewById(R.id.button2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!player_Id.equals("0")) {
                     Log.d("cat", player_Id);
                     Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, map.class);
+                    Intent intent = new Intent(MainActivity.this, Map.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials...", Toast.LENGTH_SHORT).show();
