@@ -18,6 +18,8 @@
         <activity
             android:name=".Map"
             android:label="@string/title_activity_map" />
+
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.example.mental.rpgo;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,4 +49,35 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void onButtonClick(View v)
+    {
+        if(v.getId() == R.id.button2)
+        {
+            Intent i = new Intent(MainActivity.this, SignUp.class);
+            startActivity(i);
+        }
+    }
+
+    private Boolean exit = false;
+    @Override
+    public void onBackPressed() {
+        if (exit) {
+            finish(); // finish activity
+        } else {
+            Toast.makeText(this, "Press back again to exit the app",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3 * 1000);
+
+        }
+
+    }
+
+
 }
