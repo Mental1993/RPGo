@@ -9,10 +9,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mental.rpgo.SignUp"
-    tools:showIn="@layout/activity_signup"
-    android:background="#8ed2f2">
+    tools:showIn="@layout/activity_user_sign_up">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Pass"
+        android:layout_marginTop="186dp"
+        android:background="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,6 +34,27 @@
         android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp"
         android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/Str"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:text="Not Inserted"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secP"
+        android:background="#ffffff"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,34 +86,6 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Pass"
-        android:layout_marginTop="186dp"
-        android:background="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/secP"
-        android:background="#ffffff"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/Str"
-        android:text="Not Inserted"
-        android:textColor="#000000"
-        android:layout_below="@+id/Pass"
-        android:layout_toEndOf="@+id/textView" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,16 +93,16 @@
         android:text="Retype Password"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/userN"
-        android:background="#ffffff"
-        android:layout_marginBottom="33dp"
         android:layout_above="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:background="#ffffff"
+        android:layout_marginBottom="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -110,5 +111,6 @@
         android:text="Username"
         android:id="@+id/textView4"
         android:layout_above="@+id/userN"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
