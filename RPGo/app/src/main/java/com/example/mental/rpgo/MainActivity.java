@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mydb = new DatabaseHelper(this);
-        ETuser = (EditText) findViewById(R.id.editText);
-        ETpwd = (EditText) findViewById(R.id.editText2);
+        ETuser = (EditText) findViewById(R.id.usr);
+        ETpwd = (EditText) findViewById(R.id.pwd);
         btn = (Button) findViewById(R.id.button);
         btn2 = (Button) findViewById(R.id.button2);
 
@@ -54,15 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
 
-    public void onButtonClick(View v)
-    {
-        if(v.getId() == R.id.button2)
-        {
-            Intent i = new Intent(MainActivity.this, SignUp.class);
-            startActivity(i);
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private Boolean exit = false;
