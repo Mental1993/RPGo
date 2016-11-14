@@ -40,7 +40,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "select id from user where name='"+name+"' AND password='"+pwd+"'", null );
         return res;
     }
+    public boolean insert_user(String name, String pwd) {
 
 
+        boolean insertSuccessful = false;
+
+        ContentValues values = new ContentValues();
+
+        values.put(USER_COLUMN_NAME, name);
+        values.put(USER_COLUMN_PASSWORD, pwd);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        insertSuccessful = db.insert(USER_TABLE_NAME, null, values) > 0;
+        // insertSuccessful=false;
+        db.close();
+
+        return insertSuccessful;
     }
 }
