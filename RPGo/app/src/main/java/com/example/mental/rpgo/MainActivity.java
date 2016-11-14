@@ -29,9 +29,15 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cursor cs = mydb.getData(ETuser.getText().toString(), ETpwd.getText().toString());
-                cs.moveToFirst();
-                player_Id = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_ID));
+                Cursor cs = mydb.getID(ETuser.getText().toString(), ETpwd.getText().toString());
+
+                if((cs!=null) && (cs.moveToFirst()))
+                {
+                    player_Id = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_ID));
+                }
+                else
+                {player_Id="0";}
+
                 if (!cs.isClosed())  {
                     cs.close();
                 }
