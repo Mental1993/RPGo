@@ -1,5 +1,6 @@
 package com.example.mental.rpgo;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -41,4 +42,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public boolean insert_user(String name, String pwd) {
+
+        boolean insertSuccessful = false;
+
+        ContentValues values = new ContentValues();
+
+
+        values.put(USER_COLUMN_NAME, name);
+        values.put(USER_COLUMN_PASSWORD, pwd);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        insertSuccessful = db.insert(USER_TABLE_NAME, null, values) > 0;
+        // insertSuccessful=false;
+        db.close();
+
+        return insertSuccessful;
+    }
 }
