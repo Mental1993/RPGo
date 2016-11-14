@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -67,5 +68,25 @@ public class SignUp extends Activity {
                     .create();
             myAlert.show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+        myAlert.setTitle("Are you Sure?").setMessage("Are you sure you want to cancel Sign Up?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        myAlert.show();
     }
 }
