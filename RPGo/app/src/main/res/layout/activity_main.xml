@@ -42,23 +42,24 @@
         android:hint="Password"/>
 
     <Button
-        android:text="Go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_marginTop="55dp"
-        style="@android:style/Widget.Button.Inset"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true" />
-
-    <Button
         android:text="Sign up"
         android:id="@+id/button2"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="26dp"
         style="@android:style/Widget.Button.Inset"
         android:layout_below="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_alignStart="@+id/button"
+        android:onClick="onButtonClick" />
+
+    <Button
+        android:text="Log In"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginTop="52dp"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
