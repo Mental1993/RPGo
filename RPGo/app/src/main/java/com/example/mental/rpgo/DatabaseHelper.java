@@ -34,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             onCreate(db);
         }
 
-    public Cursor getData(String name, String pwd) {
+    public Cursor getID(String name, String pwd) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select id from user where name='"+name+"' AND password='"+pwd+"'", null );
         return res;
