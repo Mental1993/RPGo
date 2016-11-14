@@ -1,104 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_user_sign_up"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@android:color/holo_orange_dark">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.mental.rpgo.SignUp"
+    tools:showIn="@layout/activity_signup"
+    android:background="#8ed2f2">
 
     <TextView
-        android:text="Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Password Strength: "
         android:id="@+id/textView"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/TFname" />
+        android:layout_below="@+id/Pass"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:textColor="#000000" />
 
     <TextView
-        android:text="E-mail Address"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/match"
+        android:layout_below="@+id/secP"
+        android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/TFemail" />
-
-    <TextView
-        android:text="Username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/TFuname" />
+        android:text="Sign up"
+        android:id="@+id/button"
+        android:layout_marginTop="63dp"
+        android:clickable="true"
+        android:enabled="false"
+        android:layout_below="@+id/match"
+        android:layout_centerHorizontal="true" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/Pass"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/TFpass1" />
+        android:id="@+id/Pass"
+        android:layout_marginTop="186dp"
+        android:background="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secP"
+        android:background="#ffffff"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Confirm Password"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/Str"
+        android:text="Not Inserted"
+        android:textColor="#000000"
+        android:layout_below="@+id/Pass"
+        android:layout_toEndOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Retype Password"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/TFpass2" />
+        android:id="@+id/userN"
+        android:background="#ffffff"
+        android:layout_marginBottom="33dp"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="Sign Up"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSignUp"
-        android:textAlignment="center"
-        style="@android:style/Widget.Button.Inset"
-        android:textAllCaps="false"
-        android:onClick="onSignUpClick"
-        android:fontFamily="sans-serif" />
-
-    <Button
-        android:text="Cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCancel"
-        android:textAlignment="center"
-        style="@android:style/Widget.Button.Inset"
-        android:onClick="onCancelButtonClick" />
-
-</LinearLayout>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Username"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/userN"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
