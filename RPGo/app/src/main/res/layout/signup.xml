@@ -4,87 +4,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/holo_orange_dark">
+    android:background="#00b386">
 
     <TextView
         android:text="Name"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/textView"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:inputType="textPersonName"
+        android:hint="Your name"
         android:ems="10"
         android:id="@+id/TFname" />
 
     <TextView
         android:text="E-mail Address"
-        android:layout_width="match_parent"
+        android:layout_width="259dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/textView2"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Your E-mail"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/TFemail" />
 
     <TextView
         android:text="Username"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/textView3"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Your username"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/TFuname" />
 
     <TextView
         android:text="Password"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/textView4"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:inputType="textPassword"
+        android:hint="Your password"
+        android:password="true"
         android:ems="10"
         android:id="@+id/TFpass1" />
 
     <TextView
         android:text="Confirm Password"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/textView5"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:inputType="textPassword"
+        android:hint="Confirm"
+        android:password="true"
         android:ems="10"
         android:id="@+id/TFpass2" />
 
     <Button
         android:text="Sign Up"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/btnSignUp"
         android:textAlignment="center"
         style="@android:style/Widget.Button.Inset"
@@ -94,8 +123,10 @@
 
     <Button
         android:text="Cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/btnCancel"
         android:textAlignment="center"
         style="@android:style/Widget.Button.Inset"
