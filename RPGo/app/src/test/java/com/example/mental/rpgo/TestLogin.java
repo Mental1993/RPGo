@@ -24,7 +24,7 @@ import static java.lang.Boolean.TRUE;
 @Config(manifest = Config.NONE)
 public class TestLogin extends TestCase
 {
-    public DatabaseHelper db;
+    public dbHelper db;
     boolean trg = TRUE;
 
 
@@ -32,7 +32,7 @@ public class TestLogin extends TestCase
     public void setUp() throws Exception {
         super.setUp();
 
-        db= new DatabaseHelper(RuntimeEnvironment.application);
+        db= new dbHelper(RuntimeEnvironment.application);
 
     }
 

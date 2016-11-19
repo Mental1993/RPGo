@@ -7,7 +7,6 @@ import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
@@ -23,13 +22,13 @@ import org.robolectric.annotation.Config;
 @Config(manifest = Config.NONE)
 public class TestInputTest extends TestCase {
 
-    public DatabaseHelper db; //basi dedomenwn
+    public dbHelper db; //basi dedomenwn
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
 
-        db=new DatabaseHelper(RuntimeEnvironment.application);
+        db=new dbHelper(RuntimeEnvironment.application);
     }
 
     @Test
