@@ -1,11 +1,9 @@
 package com.example.mental.rpgo;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,9 +18,9 @@ import android.widget.Toast;
  */
 
 public class SignUp extends AppCompatActivity {
-    EditText pass, sec, userN;
+    EditText pass, secPwd, userN;
     TextView stre, match;
-    Button butt;
+    Button btnDone;
     Integer num;
     DatabaseHelper mydb;
 
@@ -32,11 +30,11 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_user_sign_up);
         mydb = new DatabaseHelper(this);
         pass = (EditText) findViewById(R.id.Pass);
-        sec = (EditText) findViewById(R.id.secP);
+        secPwd = (EditText) findViewById(R.id.secP);
         userN = (EditText) findViewById(R.id.userN);
         stre = (TextView) findViewById(R.id.Str);
         match = (TextView) findViewById(R.id.match);
-        butt = (Button) findViewById(R.id.button);
+        btnDone = (Button) findViewById(R.id.btnDone);
         num = 0;
 
         pass.addTextChangedListener(new TextWatcher() {
@@ -71,7 +69,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-        sec.addTextChangedListener(new TextWatcher() {
+        secPwd.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -87,17 +85,17 @@ public class SignUp extends AppCompatActivity {
                 if (pass.getText().toString().equals(s.toString())) {
                     match.setText("Match");
                     if (num > 4) {
-                        butt.setEnabled(true);
+                        btnDone.setEnabled(true);
                     }
 
                 } else {
                     match.setText("Mismatch");
-                    butt.setEnabled(false);
+                    btnDone.setEnabled(false);
                 }
             }
         });
 
-        butt.setOnClickListener(new View.OnClickListener() {
+        btnDone.setOnClickListener(new View.OnClickListener() {
 
 
             @Override

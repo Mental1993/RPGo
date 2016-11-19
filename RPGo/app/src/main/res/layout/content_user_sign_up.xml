@@ -103,14 +103,14 @@
         android:id="@+id/textView2"
         android:layout_marginBottom="30dp"
         android:layout_alignBottom="@+id/Pass"
-        android:layout_alignStart="@+id/button" />
+        android:layout_alignStart="@+id/btnDone" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign up"
         android:textColor="#000000"
-        android:id="@+id/button"
+        android:id="@+id/btnDone"
         android:layout_marginTop="19dp"
         android:clickable="true"
         android:enabled="false"
