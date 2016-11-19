@@ -22,13 +22,13 @@ import org.robolectric.annotation.Config;
 @Config(manifest = Config.NONE)
 public class TestInputTest extends TestCase {
 
-    public dbHelper db; //basi dedomenwn
+    public DatabaseHelper db; //basi dedomenwn
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
 
-        db=new dbHelper(RuntimeEnvironment.application);
+        db=new DatabaseHelper(RuntimeEnvironment.application);
     }
 
     @Test

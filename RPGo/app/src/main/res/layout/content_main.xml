@@ -49,18 +49,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:layout_marginTop="23dp" />
+        android:text="GO"
+        android:id="@+id/btnLogIn"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/pwd"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GO"
-        android:id="@+id/button"
-        android:layout_marginTop="70dp"
-        android:layout_below="@+id/pwd"
-        android:layout_centerHorizontal="true" />
+        android:text="Sign Up"
+        android:id="@+id/btnSignUp"
+        android:layout_below="@+id/btnLogIn"
+        android:layout_alignStart="@+id/btnLogIn" />
 </RelativeLayout>

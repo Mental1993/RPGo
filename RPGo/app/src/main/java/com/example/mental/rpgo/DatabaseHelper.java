@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Mental on 8/11/2016.
  */
 
-public class dbHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "appDb.db";
     public static final String USER_TABLE_NAME = "user";
@@ -19,7 +19,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_PASSWORD = "password";
 
 
-    public dbHelper(Context context) {
+    public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME , null, 1);
     }
 

@@ -22,19 +22,19 @@ public class SignUp extends AppCompatActivity {
     TextView stre, match;
     Button btnDone;
     Integer num;
-    dbHelper mydb;
+    DatabaseHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_sign_up);
-        mydb = new dbHelper(this);
+        mydb = new DatabaseHelper(this);
         pass = (EditText) findViewById(R.id.Pass);
         secPwd = (EditText) findViewById(R.id.secP);
         userN = (EditText) findViewById(R.id.userN);
         stre = (TextView) findViewById(R.id.Str);
         match = (TextView) findViewById(R.id.match);
-        btnDone = (Button) findViewById(R.id.button);
+        btnDone = (Button) findViewById(R.id.btnDone);
         num = 0;
 
         pass.addTextChangedListener(new TextWatcher() {

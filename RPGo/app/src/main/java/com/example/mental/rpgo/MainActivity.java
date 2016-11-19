@@ -14,18 +14,18 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText ETuser,ETpwd;
     Button btnLogIn, btnSignUp;
-    dbHelper mydb;
+    DatabaseHelper mydb;
     String player_Id="0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mydb = new dbHelper(this);
+        mydb = new DatabaseHelper(this);
         ETuser = (EditText) findViewById(R.id.usr);
         ETpwd = (EditText) findViewById(R.id.pwd);
-        btnLogIn = (Button) findViewById(R.id.button);
-        btnSignUp = (Button) findViewById(R.id.button2);
+        btnLogIn = (Button) findViewById(R.id.btnLogIn);
+        btnSignUp = (Button) findViewById(R.id.btnSignUp);
 
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if((cs!=null) && (cs.moveToFirst()))
                 {
-                    player_Id = cs.getString(cs.getColumnIndex(dbHelper.USER_COLUMN_ID));
+                    player_Id = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_ID));
                 }
                 else
                 {player_Id="0";}
