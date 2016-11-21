@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper mydb;
     String player_Id="0";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
