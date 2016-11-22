@@ -2,18 +2,18 @@ package com.example.mental.rpgo;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Map extends FragmentActivity implements OnMapReadyCallback {
@@ -58,17 +58,10 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-        if (Global.getId().equals("1")) {
-            //tsekarw to id tou xristi, an einai 1, bazw to point sto 1o stoxo
-            // auto se epomenh ekdosh 8a allaksei, kai 8a pairnei ton ari8mo tou grifou pou 8a eixei na lusei o xristis
-            LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
-            mMap.addMarker(new MarkerOptions()
-                    .position(TEI)
-                    .title("1os grifos")//.title("TEI Kentrikis Makedomias")
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
-            if (mMap != null) {
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
-            }
+
+
+       
+
 
             if (Global.getId().equals("2")) {
                 LatLng amaks = new LatLng(41.075958, 23.551359);//2o marker
@@ -81,7 +74,20 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                 }
             }
 
-            if (Global.getId().equals("3")) {
+            if (Global.getId().equals("1")) {
+                //tsekarw to id tou xristi, an einai 1, bazw to point sto 1o stoxo
+                // auto se epomenh ekdosh 8a allaksei, kai 8a pairnei ton ari8mo tou grifou pou 8a eixei na lusei o xristis
+                LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
+                mMap.addMarker(new MarkerOptions()
+                        .position(TEI)
+                        .title("1os grifos")//.title("TEI Kentrikis Makedomias")
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+                if (mMap != null) {
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
+                }
+
+
+                if (Global.getId().equals("3")) {
 
                 LatLng nav = new LatLng(41.077753, 23.549063);
                 mMap.addMarker(new MarkerOptions()
