@@ -2,11 +2,11 @@ package com.example.mental.rpgo;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,6 +15,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Map extends FragmentActivity implements OnMapReadyCallback {
 
@@ -55,6 +56,28 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         }
 
         mMap.setMyLocationEnabled(true);
+
+        if(Global.getId().equals("1")) {
+            LatLng TEI = new LatLng(41.074033, 23.552689);
+            mMap.addMarker(new MarkerOptions()
+                    .position(TEI)
+                    .title("Eiste edw")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+
+            LatLng amaks= new LatLng(41.075958, 23.551359);
+            mMap.addMarker(new MarkerOptions()
+                    .position(amaks)
+                    .title("Amaksostasio")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+
+            mMap.addPolyline(new PolylineOptions().add(
+                    TEI,
+                    amaks
+            )
+                    .width(10)
+                    .color(Color.RED));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(TEI,16));
+        }
 
 
 
