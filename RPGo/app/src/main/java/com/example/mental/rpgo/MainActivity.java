@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogIn, btnSignUp;
     DatabaseHelper mydb;
     String player_Id="0";
+    Global gl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         ETpwd = (EditText) findViewById(R.id.pwd);
         btnLogIn = (Button) findViewById(R.id.btnLogIn);
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
-
+        gl = new Global();
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!player_Id.equals("0")) {
                     Log.d("cat", player_Id);
+                    gl.setId(player_Id);
                     Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Map.class);
                     startActivity(intent);
