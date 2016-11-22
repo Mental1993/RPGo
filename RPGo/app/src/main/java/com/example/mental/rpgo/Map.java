@@ -58,7 +58,18 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-        
+        if (Global.getId().equals("4"))
+        {
+            LatLng parko = new LatLng(41.079394, 23.548898);
+            mMap.addMarker(new MarkerOptions()
+                    .position(parko)
+                    .title("4ος Γρίφος")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+            if (mMap != null)
+            {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parko, 16));
+            }
+        }
 
     }
 }
