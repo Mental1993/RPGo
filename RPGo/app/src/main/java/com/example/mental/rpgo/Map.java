@@ -2,6 +2,7 @@ package com.example.mental.rpgo;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Map extends FragmentActivity implements OnMapReadyCallback {
 
@@ -56,19 +58,27 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
 
         mMap.setMyLocationEnabled(true);
 
-
-
-        if (Global.getId().equals("1")) {
-            //tsekarw to id tou xristi, an einai 1, bazw to point sto 1o stoxo
-            // auto se epomenh ekdosh 8a allaksei, kai 8a pairnei ton ari8mo tou grifou pou 8a eixei na lusei o xristis
-            LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
+        if(Global.getId().equals("1")) {
+            LatLng TEI = new LatLng(41.074033, 23.552689);
             mMap.addMarker(new MarkerOptions()
                     .position(TEI)
-                    .title("1os grifos")//.title("TEI Kentrikis Makedomias")
+                    .title("Eiste edw")
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
-            if (mMap != null) {
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
-            }
+
+            LatLng amaks= new LatLng(41.075958, 23.551359);
+            mMap.addMarker(new MarkerOptions()
+                    .position(amaks)
+                    .title("Amaksostasio")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+
+            mMap.addPolyline(new PolylineOptions().add(
+                    TEI,
+                    amaks
+            )
+                    .width(10)
+                    .color(Color.RED));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(TEI,16));
+        }
 
             if (Global.getId().equals("2")) {
                 LatLng amaks = new LatLng(41.075958, 23.551359);//2o marker
