@@ -74,6 +74,9 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                 }
             }
 
+
+
+
             if (Global.getId().equals("1")) {
                 //tsekarw to id tou xristi, an einai 1, bazw to point sto 1o stoxo
                 // auto se epomenh ekdosh 8a allaksei, kai 8a pairnei ton ari8mo tou grifou pou 8a eixei na lusei o xristis
@@ -87,15 +90,6 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                 }
 
 
-                if (Global.getId().equals("3")) {
-
-                LatLng nav = new LatLng(41.077753, 23.549063);
-                mMap.addMarker(new MarkerOptions()
-                        .position(nav)
-                        .title("3os grifos")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nav, 16));
-            }
 
             if (Global.getId().equals("4")) {
 
@@ -106,7 +100,22 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parko, 16));
             }
-        }
+
+
+
+                if (Global.getId().equals("3")) {
+
+                    LatLng nav = new LatLng(41.077753, 23.549063);
+                    mMap.addMarker(new MarkerOptions()
+                            .position(nav)
+                            .title("3os grifos")
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nav, 16));
+                }
+
+
+
+            }
 
     }
 }
