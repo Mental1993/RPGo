@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mental.rpgo">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,32 +17,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUp"
-            android:label="SignUp"
-            android:theme="@style/AppTheme.NoActionBar"><!-- ATTENTION: This intent was auto-generated. Follow instructions at
-  https://g.co/AppIndexing/AndroidStudio to publish your URLs. -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- ATTENTION: This data URL was auto-generated. We recommend that you use the HTTP scheme.
-                  TODO: Change the host or pathPrefix as necessary. -->
-                <data
-                    android:host="[ENTER-YOUR-HTTP-HOST-HERE]"
-                    android:pathPrefix="/signup"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
-
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAATCGR3gy4kv_nQpg0QPXGFaQVOmtG_HI" />
-        <activity
             android:name=".Map"
-            android:label="@string/title_activity_map"></activity>
-
+            android:label="@string/title_activity_map" />
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>
