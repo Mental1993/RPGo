@@ -73,3 +73,17 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
 
     }
 }
+
+mMap.setMyLocationEnabled(true); //deixnw thn 8esh tou xristi
+
+
+/**
+ */
+        if (Global.getId().equals("2")) {
+        LatLng amaks = new LatLng(41.075958, 23.551359);//2o marker
+        mMap.addMarker(new MarkerOptions()
+        .position(amaks)
+        .title("2os grifos")
+        .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+        if (mMap != null) {
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(amaks, 16));
