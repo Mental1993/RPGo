@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("cat", player_Id);
                     gl.setId(player_Id);
                     Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, Map.class);
+                    Intent intent = new Intent(MainActivity.this, Buttons.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials...", Toast.LENGTH_SHORT).show();
