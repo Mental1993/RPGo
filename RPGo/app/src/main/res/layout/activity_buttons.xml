@@ -8,32 +8,36 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.mental.rpgo.Buttons">
+    tools:context="com.example.mental.rpgo.Buttons"
+    android:background="#006666">
 
     <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="76dp"
-        android:id="@+id/btnScan" />
-
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnScan"
-        android:layout_alignStart="@+id/btnScan"
-        android:layout_marginTop="55dp"
-        android:id="@+id/btnSack" />
-
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
+        android:text="back"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnSack"
         android:layout_alignStart="@+id/btnSack"
         android:layout_marginTop="61dp"
-        android:id="@+id/btnMap" />
+        android:id="@+id/btnMap"
+        style="@android:style/Widget.Material.Light.Button.Inset" />
+
+    <Button
+        android:text="sack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSack"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:layout_below="@+id/btnScan"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="72dp" />
+
+    <Button
+        android:text="Scanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:id="@+id/btnScan"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
