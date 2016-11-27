@@ -3,6 +3,9 @@
     package="com.example.mental.rpgo">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +32,9 @@
         <activity
             android:name=".Map"
             android:label="TheMap" />
+        <activity android:name=".Scanner"
+            android:label="Scanner"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Buttons"></activity>
     </application>
 
