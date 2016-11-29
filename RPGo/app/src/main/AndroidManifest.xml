@@ -32,10 +32,12 @@
         <activity
             android:name=".Map"
             android:label="TheMap" />
-        <activity android:name=".Scanner"
+        <activity
+            android:name=".Scanner"
             android:label="Scanner"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Buttons"></activity>
+        <activity android:name=".Buttons" />
+        <activity android:name=".grifos2"></activity>
     </application>
 
 </manifest>
