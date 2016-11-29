@@ -9,7 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class grifos2 extends AppCompatActivity {
+public class grifos2 extends AppCompatActivity
+{
 
     Button btn_Answer;
     EditText E_Answer;
@@ -43,3 +44,33 @@ public class grifos2 extends AppCompatActivity {
     //part 2
 
 }
+
+
+    void part2() {
+        Thetext.setText(getResources().getString(R.string.grifos2_p2)); //8etoyme allo grifo
+        E_Answer.setText(""); //sbinoyme thn prohgoymenh apatisi tou xristi
+        btn_Answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //blepoyme ti apantise
+
+                if (E_Answer.getText().toString().equals("Pick") || E_Answer.getText().toString().equals("pick")){
+                    Toast.makeText(getApplicationContext(), "Pick what?", Toast.LENGTH_SHORT).show();//an den kserei na xrisimopoiei
+                    //swsta to lock pick
+                }
+                if (E_Answer.getText().toString().equals("Pick lock") || E_Answer.getText().toString().equals("Pick the lock")) {
+                    Toast.makeText(getApplicationContext(), "The box contains a piece of map", Toast.LENGTH_SHORT).show(); //otan kserei na
+                    //xrisimopoiei swsta to lock picks
+
+                    mydb= new dbHelper(grifos2.this);
+                    int setter=Integer.parseInt(Global.getNogrif())+1;
+                    upd= mydb.update_user(setter,Integer.parseInt(Global.getId()));
+                    Global.setNogrif(String.valueOf(setter));
+                    mydb.close();
+                    startActivity(new Intent(grifos2.this, buttons.class));
+                } else {
+                    Toast.makeText(getApplicationContext(), "Think!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
