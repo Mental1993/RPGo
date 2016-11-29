@@ -17,6 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_ID = "id";
     public static final String USER_COLUMN_NAME = "name";
     public static final String USER_COLUMN_PASSWORD = "password";
+    public static final String USER_COLUMN_NOGRIF="nogrif"; //new line
 
 
     public DatabaseHelper(Context context) {
@@ -57,5 +58,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return insertSuccessful;
+    }
+
+    public boolean update_user(int nr,int id){
+        boolean updateSuccessful;
+        ContentValues values = new ContentValues();
+
+        values.put(USER_COLUMN_NOGRIF,nr);
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        updateSuccessful = db.update(USER_TABLE_NAME,values,"id="+id, null) > 0;
+        return updateSuccessful;
     }
 }

@@ -51,6 +51,8 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         if(rawResult.getText().equals("grifos1"))
         {
             startActivity(new Intent(Scanner.this,grifos1.class));
+        }else if (rawResult.getText().equals("grifos2")) {
+            startActivity(new Intent(Scanner.this, grifos2.class));
         }
 
 

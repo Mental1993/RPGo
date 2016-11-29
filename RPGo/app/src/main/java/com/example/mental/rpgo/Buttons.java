@@ -24,7 +24,7 @@ public class Buttons extends AppCompatActivity {
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(buttons.this, scanner.class));
+                startActivity(new Intent(Buttons.this, Scanner.class));
             }
         });
 
@@ -38,7 +38,7 @@ public class Buttons extends AppCompatActivity {
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(buttons.this, map.class));
+                startActivity(new Intent(Buttons.this, Map.class));
             }
         });
     }
