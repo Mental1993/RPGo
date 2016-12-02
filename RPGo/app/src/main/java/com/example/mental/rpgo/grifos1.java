@@ -18,6 +18,8 @@ public class grifos1 extends AppCompatActivity {
     Button btn_Answer;
     EditText E_Answer;
     TextView Text;
+    DatabaseHelper mydb;
+    boolean upd;
 
     @Override
     protected void onCreate(Bundle saveInstanceState){
@@ -34,7 +36,15 @@ public class grifos1 extends AppCompatActivity {
             public  void onClick(View v){
                 if(E_Answer.getText().toString().equals("maid of Orleans") || E_Answer.getText().toString().equals("maid of orleans")){
                     Toast.makeText(getApplicationContext(),"You are... correct!",Toast.LENGTH_SHORT).show();
+                    mydb= new DatabaseHelper(grifos1.this);
+
+                    int setter=Integer.parseInt(Global.getNogrif())+1;
+                    upd= mydb.update_user(setter,Integer.parseInt(Global.getId()));
+                    Global.setNogrif(String.valueOf(setter));
+                    mydb.close();
                     startActivity(new Intent(grifos1.this,Buttons.class));
+
+
                 }
                 else
                 {
