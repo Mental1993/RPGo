@@ -12,10 +12,6 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public static String getNogrif() {
         return Nogrif;
     }
@@ -23,4 +19,9 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
     public static void setNogrif(String nogrif) {
         Nogrif = nogrif;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }
