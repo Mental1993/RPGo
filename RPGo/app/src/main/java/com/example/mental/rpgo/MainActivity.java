@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText ETuser,ETpwd;
+    TextView TV_pwdforgot;
     Button btnLogIn, btnSignUp;
     DatabaseHelper mydb;
     String player_Id="0";
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         ETpwd = (EditText) findViewById(R.id.pwd);
         btnLogIn = (Button) findViewById(R.id.btnLogIn);
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        TV_pwdforgot = (TextView) findViewById(R.id.TV_pwdforgot);
         gl = new Global();
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +74,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        TV_pwdforgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Forgot_password.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

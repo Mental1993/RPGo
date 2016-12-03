@@ -75,4 +75,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         updateSuccessful = db.update(USER_TABLE_NAME,values, " id = " + id, null) > 0;
         return updateSuccessful;
     }
+
+    public Cursor user_exists(String usrname, String email) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + USER_COLUMN_PASSWORD + " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_NAME + "='"+usrname+"' AND " + USER_COLUMN_EMAIL + "='"+email+"'", null);
+
+        return cursor;
+    }
+
 }

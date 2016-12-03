@@ -4,4 +4,5 @@
     <string name="title_activity_map">map</string>
     <string name="title_activity_user_sign_up">userSignUp</string>
     <string name="grifos2_p2">A box appears in front of you</string>
+    <string name="TV_forgot_password">Forgot your password? Click <u>here</u></string>
 </resources>
