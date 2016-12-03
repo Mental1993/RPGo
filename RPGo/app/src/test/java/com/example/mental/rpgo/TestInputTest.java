@@ -38,10 +38,11 @@ public class TestInputTest extends TestCase {
         boolean isIn=false;
         String testName= "zwh";
         String testPwd= "dimitris";
+        String testMail= "testmail@mail.com";
         boolean trg= true;
 
         //When
-        isIn = db.insert_user(testName,testPwd);
+        isIn = db.insert_user(testName,testPwd,testMail);
 
         //Then
         assertEquals(isIn,trg);
