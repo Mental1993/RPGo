@@ -40,8 +40,9 @@ public class TestLogin extends TestCase
     public void TestLogIn(){
         String testName = "admin";
         String testPwd = "admin";
+        String testEmail = "admin@admin.com";
         boolean logged;
-        Cursor cs= db.getID(testName,testPwd);
+        Cursor cs= db.getID(testName,testPwd, testEmail);
         if((cs!=null) && (cs.moveToFirst())){
             logged=true;
         }
