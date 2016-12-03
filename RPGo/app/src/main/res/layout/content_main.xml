@@ -18,48 +18,48 @@
         android:layout_height="wrap_content"
         android:id="@+id/Tlog"
         android:textSize="36dp"
+        android:layout_marginTop="32dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="76dp" />
-
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:id="@+id/usr"
-        android:hint="Username"
-        android:layout_marginTop="37dp"
-        android:layout_below="@+id/Tlog"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:background="#ffffff" />
-
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:inputType="textPassword"
-        android:ems="5"
-        android:id="@+id/pwd"
-        android:hint="Password"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/usr"
-        android:layout_alignStart="@+id/usr"
-        android:gravity="center"
-        android:background="#ffffff" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GO"
-        android:id="@+id/btnLogIn"
-        android:layout_marginTop="70dp"
-        android:layout_below="@+id/pwd"
-        android:layout_centerHorizontal="true" />
+        android:paddingBottom="30dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/btnSignUp"
-        android:layout_below="@+id/btnLogIn"
-        android:layout_alignStart="@+id/btnLogIn" />
+        android:layout_below="@+id/pwd"
+        android:layout_alignEnd="@+id/pwd"
+        android:layout_marginTop="46dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:id="@+id/btnLogIn"
+        android:layout_alignBaseline="@+id/btnSignUp"
+        android:layout_alignBottom="@+id/btnSignUp"
+        android:layout_alignStart="@+id/pwd" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/usr"
+        android:hint="Username"
+        android:layout_below="@+id/Tlog"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/pwd"
+        android:hint="Password"
+        android:layout_below="@+id/usr"
+        android:layout_alignStart="@+id/usr" />
+
 </RelativeLayout>

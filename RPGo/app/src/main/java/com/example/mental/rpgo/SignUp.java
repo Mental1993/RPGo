@@ -29,10 +29,10 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_sign_up);
         mydb = new DatabaseHelper(this);
-        pass = (EditText) findViewById(R.id.Pass);
+        pass = (EditText) findViewById(R.id.pass);
         secPwd = (EditText) findViewById(R.id.secP);
         userN = (EditText) findViewById(R.id.userN);
-        stre = (TextView) findViewById(R.id.Str);
+        stre = (TextView) findViewById(R.id.TV_str);
         match = (TextView) findViewById(R.id.match);
         btnDone = (Button) findViewById(R.id.btnDone);
         num = 0;
@@ -50,7 +50,6 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
                 if (num <= 4) {
                     stre.setText("Too weak");
                 }
@@ -87,7 +86,6 @@ public class SignUp extends AppCompatActivity {
                     if (num > 4) {
                         btnDone.setEnabled(true);
                     }
-
                 } else {
                     match.setText("Mismatch");
                     btnDone.setEnabled(false);

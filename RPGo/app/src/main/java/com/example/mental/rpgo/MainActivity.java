@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper mydb;
     String player_Id="0";
     Global gl;
+    String username_entered, password_entered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,27 +32,28 @@ public class MainActivity extends AppCompatActivity {
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cursor cs = mydb.getID(ETuser.getText().toString(), ETpwd.getText().toString());
+                username_entered = ETuser.getText().toString();
+                password_entered = ETpwd.getText().toString();
+                Cursor cs = mydb.getID(username_entered, password_entered);
 
-                if((cs!=null) && (cs.moveToFirst()))
-                {
+                if((cs!=null) && (cs.moveToFirst())) {
                     player_Id = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_ID));
+                } else {
+                    player_Id="0";
                 }
-                else
-                {player_Id="0";}
 
                 if (!cs.isClosed())  {
                     cs.close();
                 }
 
                 if (!player_Id.equals("0")) {
-                    Log.d("cat", player_Id);
+                    //Log.d("cat", player_Id);
                     gl.setId(player_Id);
-                    Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Successful Login", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Buttons.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, SignUp.class);
                 startActivity(intent);
             }
