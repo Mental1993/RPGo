@@ -1,5 +1,7 @@
 package com.example.mental.rpgo;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,8 +49,21 @@ public class Buttons extends AppCompatActivity {
         {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(Buttons.this, MainActivity.class);
-                startActivity(intent);
+                new AlertDialog.Builder(Buttons.this)
+                        .setTitle("Logout")
+                        .setMessage("Would you like to logout?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(Buttons.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // user doesn't want to logout
+                            }
+                        })
+                        .show();
             }
         });
     }

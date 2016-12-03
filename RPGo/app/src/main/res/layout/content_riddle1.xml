@@ -32,7 +32,7 @@
 
     <TextView
         android:text="What was Joan of Arc made of?"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Text"
         android:textSize="32sp"
@@ -42,6 +42,7 @@
         android:layout_marginTop="106dp"
         android:textStyle="normal|bold"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </RelativeLayout>

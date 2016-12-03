@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     String player_Id="0";
     String player_nogrif="0";
     Global gl;
-    String username_entered, password_entered;
+    String username_entered, password_entered, email_entered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 username_entered = ETuser.getText().toString();
                 password_entered = ETpwd.getText().toString();
-                Cursor cs = mydb.getID(username_entered, password_entered);
+                email_entered = ETuser.getText().toString();
+                Cursor cs = mydb.getID(username_entered, password_entered, email_entered);
 
                 if((cs!=null) && (cs.moveToFirst())) {
                     player_Id = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_ID));
@@ -63,11 +64,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, SignUp.class);
                 startActivity(intent);
             }

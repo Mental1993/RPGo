@@ -47,7 +47,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/usr"
-        android:hint="Username"
+        android:hint="Username/Email"
         android:layout_below="@+id/Tlog"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp" />

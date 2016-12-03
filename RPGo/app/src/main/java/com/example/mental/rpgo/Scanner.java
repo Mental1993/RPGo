@@ -3,6 +3,7 @@ package com.example.mental.rpgo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 
@@ -53,6 +54,8 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         }
         else if(rawResult.getText().equals("grifos2")) {
             startActivity(new Intent(Scanner.this, grifos2.class));
+        } else {
+            Toast.makeText(getApplicationContext(), "Can't identify this QR code", Toast.LENGTH_SHORT).show();
         }
 
         finish();
