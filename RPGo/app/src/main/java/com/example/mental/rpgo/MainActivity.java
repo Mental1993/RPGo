@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogIn, btnSignUp;
     DatabaseHelper mydb;
     String player_Id="0";
+    String player_nogrif="0";
     Global gl;
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 if((cs!=null) && (cs.moveToFirst()))
                 {
                     player_Id = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_ID));
+                    player_nogrif=cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_NOGRIF));
                 }
                 else
                 {player_Id="0";}
@@ -46,9 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!player_Id.equals("0")) {
                     Log.d("cat", player_Id);
+                    Log.d("cat", player_nogrif);
                     gl.setId(player_Id);
+                    gl.setNogrif(player_nogrif);
                     Toast.makeText(getApplicationContext(), "Redirection...", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Buttons.class);
+                    mydb.close();
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials...", Toast.LENGTH_SHORT).show();

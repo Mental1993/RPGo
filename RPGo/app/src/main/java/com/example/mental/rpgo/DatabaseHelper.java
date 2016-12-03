@@ -21,13 +21,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 1);
+        super(context, DATABASE_NAME , null, 3);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL( "create table user " + "(id integer primary key, name VARCHAR, password VARCHAR)");
-        db.execSQL("INSERT INTO user VALUES(1,'admin','admin');");
+        db.execSQL( "create table if not exists user (id integer primary key, name VARCHAR, password VARCHAR,nogrif integer)");
+        db.execSQL("INSERT INTO user VALUES(1,'admin','admin',1);");
     }
 
     @Override
@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getID(String name, String pwd) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select id from user where name='"+name+"' AND password='"+pwd+"'", null );
+        Cursor res =  db.rawQuery( "select id,nogrif from user where name='"+name+"' AND password='"+pwd+"'", null );
         return res;
     }
     public boolean insert_user(String name, String pwd) {
@@ -50,6 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(USER_COLUMN_NAME, name);
         values.put(USER_COLUMN_PASSWORD, pwd);
+        values.put(USER_COLUMN_NOGRIF, 1);
 
         SQLiteDatabase db = this.getWritableDatabase();
 
