@@ -18,8 +18,8 @@ import android.widget.Toast;
  */
 
 public class SignUp extends AppCompatActivity {
-    EditText pass, secPwd, userN;
-    TextView stre, match;
+    EditText pass, secPwd, userN, ET_email;
+    TextView stre, match, TV_email;
     Button btnDone;
     Integer num;
     DatabaseHelper mydb;
@@ -35,6 +35,8 @@ public class SignUp extends AppCompatActivity {
         stre = (TextView) findViewById(R.id.TV_str);
         match = (TextView) findViewById(R.id.match);
         btnDone = (Button) findViewById(R.id.btnDone);
+        ET_email = (EditText) findViewById(R.id.ET_email);
+        TV_email = (TextView) findViewById(R.id.TV_email);
         num = 0;
 
         pass.addTextChangedListener(new TextWatcher() {
@@ -100,16 +102,17 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 String name = userN.getText().toString();
                 String pwd = pass.getText().toString();
-                boolean isOK= mydb.insert_user(name,pwd);
+                String email = ET_email.getText().toString();
+                boolean isOK= mydb.insert_user(name, pwd, email);
                 if(isOK)
                 {
-                    Toast.makeText(getApplicationContext(), "Eggrafikate swsta", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUp.this, MainActivity.class);
                     startActivity(intent);
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Paroysiastike problima", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Sign up failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
