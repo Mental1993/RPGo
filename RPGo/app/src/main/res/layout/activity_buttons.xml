@@ -16,10 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:id="@+id/textView5"
+        android:id="@+id/TV_mainenu"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@android:color/white" />
 
     <Button
         android:text="MAP"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnScan"
         style="@android:style/Widget.Material.Light.Button.Inset"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/TV_mainenu"
         android:layout_alignStart="@+id/btnSack"
         android:layout_marginTop="56dp" />
 
@@ -52,12 +53,11 @@
         android:layout_marginTop="84dp" />
 
     <Button
-        android:text="LOG OUT"
+        android:text="Log out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="53dp"
         android:id="@+id/btnlogout"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        style="@android:style/Widget.Material.Light.Button.Inset" />
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:layout_above="@+id/btnScan"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
