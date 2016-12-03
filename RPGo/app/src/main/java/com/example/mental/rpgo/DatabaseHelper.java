@@ -22,13 +22,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 2);
+        super(context, DATABASE_NAME , null, 5);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL( "CREATE TABLE user " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR)");
-        db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com');");
+        db.execSQL( "CREATE TABLE user " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " misoINTEGER)");
+        db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1);");
     }
 
     @Override
@@ -39,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getID(String name, String pwd) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_ID + " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_NAME + "='"+name+"' AND " + USER_COLUMN_PASSWORD + "='"+pwd+"'", null );
+        Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_ID + "," + USER_COLUMN_NOGRIF + " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_NAME + "='"+name+"' AND " + USER_COLUMN_PASSWORD + "='"+pwd+"'", null );
         return res;
     }
     public boolean insert_user(String name, String pwd, String newemail) {
@@ -52,6 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(USER_COLUMN_NAME, name);
         values.put(USER_COLUMN_PASSWORD, pwd);
         values.put(USER_COLUMN_EMAIL, newemail);
+        values.put(USER_COLUMN_NOGRIF, 1);
 
         SQLiteDatabase db = this.getWritableDatabase();
 
