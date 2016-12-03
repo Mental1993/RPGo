@@ -14,15 +14,6 @@
     tools:showIn="@layout/activity_user_sign_up">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/match"
-        android:layout_below="@+id/secP"
-        android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white" />
-
-    <TextView
         android:text="Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,38 +29,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Username :"
-        android:id="@+id/TV_username"
-        android:layout_marginTop="18dp"
-        android:fontFamily="sans-serif"
-        android:textSize="22sp"
+        android:text="Password :"
+        android:id="@+id/TV_password"
+        android:layout_marginTop="27dp"
+        android:textSize="20sp"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/TV_register"
-        android:layout_toStartOf="@+id/btnDone" />
+        android:layout_below="@+id/TV_username"
+        android:layout_alignStart="@+id/TV_username"
+        android:layout_alignEnd="@+id/TV_username" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Password :"
-        android:id="@+id/TV_password"
-        android:layout_marginTop="27dp"
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/TV_username"
-        android:layout_alignStart="@+id/TV_username" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Password Strength: "
         android:id="@+id/TV_passStr"
-        android:textColor="@android:color/white"
         android:paddingRight="20dp"
         android:layout_marginTop="19dp"
         android:layout_below="@+id/TV_password"
-        android:layout_alignStart="@+id/TV_password" />
+        android:layout_alignStart="@+id/TV_password"
+        android:textSize="20sp"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,50 +59,8 @@
         android:textColor="@android:color/white"
         android:layout_marginTop="23dp"
         android:layout_below="@+id/TV_passStr"
-        android:layout_alignStart="@+id/TV_passStr" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/userN"
-        android:layout_alignBaseline="@+id/TV_username"
-        android:layout_alignBottom="@+id/TV_username"
-        android:layout_toEndOf="@+id/TV_retypePass"
-        android:hint="Username"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:inputType="textPersonName"
-        android:textColorLink="@android:color/black"
-        android:layout_alignStart="@+id/pass" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/secP"
-        android:layout_alignBaseline="@+id/TV_retypePass"
-        android:layout_alignBottom="@+id/TV_retypePass"
-        android:layout_toEndOf="@+id/match"
-        android:hint="Password again"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/pass"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:layout_alignBaseline="@+id/TV_password"
-        android:layout_alignBottom="@+id/TV_password"
-        android:hint="Password"
-        android:layout_alignStart="@+id/secP"
-        android:layout_alignParentEnd="false"
-        android:textColorLink="?android:attr/textColorPrimaryDisableOnly" />
+        android:layout_alignStart="@+id/TV_passStr"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,7 +71,76 @@
         android:textColor="@android:color/white"
         android:layout_alignBaseline="@+id/TV_passStr"
         android:layout_alignBottom="@+id/TV_passStr"
-        android:layout_toEndOf="@+id/btnDone" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/TV_passStr"
+        android:textStyle="normal|italic"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/match"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/secP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/userN"
+        android:hint="Username"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColorLink="@android:color/black"
+        android:layout_alignBaseline="@+id/TV_username"
+        android:layout_alignBottom="@+id/TV_username"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/pass" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/pass"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:hint="Password"
+        android:textColorLink="?android:attr/textColorPrimaryDisableOnly"
+        android:layout_alignBaseline="@+id/TV_password"
+        android:layout_alignBottom="@+id/TV_password"
+        android:layout_toEndOf="@+id/TV_username"
+        android:layout_alignStart="@+id/secP" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/secP"
+        android:hint="Password again"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:layout_alignBaseline="@+id/TV_retypePass"
+        android:layout_alignBottom="@+id/TV_retypePass"
+        android:layout_toEndOf="@+id/TV_retypePass" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Username :"
+        android:id="@+id/TV_username"
+        android:layout_marginTop="19dp"
+        android:fontFamily="sans-serif"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/TV_register"
+        android:layout_toStartOf="@+id/TV_register" />
 
     <Button
         android:layout_width="wrap_content"
@@ -146,7 +152,31 @@
         android:enabled="false"
         style="@android:style/Widget.Material.Light.Button.Inset"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/TV_register"
-        android:layout_marginBottom="89dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/ET_email"
+        android:layout_below="@+id/match"
+        android:hint="E-mail"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:layout_alignStart="@+id/secP"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_email"
+        android:text="E-mail :"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_alignBaseline="@+id/ET_email"
+        android:layout_alignBottom="@+id/ET_email"
+        android:layout_alignStart="@+id/TV_retypePass" />
 
 </RelativeLayout>
