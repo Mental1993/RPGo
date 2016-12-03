@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL( "create table user (id integer primary key, name VARCHAR, password VARCHAR,nogrif integer)");
+        db.execSQL( "create table if not exists user (id integer primary key, name VARCHAR, password VARCHAR,nogrif integer)");
         db.execSQL("INSERT INTO user VALUES(1,'admin','admin',1);");
     }
 
