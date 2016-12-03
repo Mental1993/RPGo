@@ -37,8 +37,9 @@
             android:label="Scanner"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Buttons" />
-        <activity android:name=".grifos1"></activity>
-        <activity android:name=".grifos2"></activity>
+        <activity android:name=".grifos1" />
+        <activity android:name=".grifos2" />
+        <activity android:name=".Forgot_password"></activity>
     </application>
 
 </manifest>

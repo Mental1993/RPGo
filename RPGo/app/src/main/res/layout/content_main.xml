@@ -23,24 +23,6 @@
         android:layout_centerHorizontal="true"
         android:paddingBottom="30dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/btnSignUp"
-        android:layout_below="@+id/pwd"
-        android:layout_alignEnd="@+id/pwd"
-        android:layout_marginTop="46dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GO"
-        android:id="@+id/btnLogIn"
-        android:layout_alignBaseline="@+id/btnSignUp"
-        android:layout_alignBottom="@+id/btnSignUp"
-        android:layout_alignStart="@+id/pwd" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,5 +43,37 @@
         android:hint="Password"
         android:layout_below="@+id/usr"
         android:layout_alignStart="@+id/usr" />
+
+    <TextView
+        android:text="@string/TV_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_pwdforgot"
+        android:textSize="16sp"
+        android:layout_below="@+id/pwd"
+        android:layout_alignStart="@+id/pwd"
+        android:layout_marginTop="21dp"
+        android:clickable="true"
+        android:textColor="?attr/editTextColor" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/btnSignUp"
+        android:layout_marginEnd="12dp"
+        android:layout_below="@+id/TV_pwdforgot"
+        android:layout_alignEnd="@+id/pwd"
+        android:layout_marginTop="75dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:id="@+id/btnLogIn"
+        android:layout_marginEnd="40dp"
+        android:layout_alignBaseline="@+id/btnSignUp"
+        android:layout_alignBottom="@+id/btnSignUp"
+        android:layout_toStartOf="@+id/btnSignUp" />
 
 </RelativeLayout>
