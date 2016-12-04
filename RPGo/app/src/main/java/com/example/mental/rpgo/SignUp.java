@@ -130,16 +130,18 @@ public class SignUp extends AppCompatActivity {
 
         AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
         myAlert.setMessage("Are you sure you want to cancel sign up?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                    }
+                })
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(SignUp.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 })
                 .setTitle("Are you sure?")
