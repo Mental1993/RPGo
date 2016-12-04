@@ -11,7 +11,7 @@
     tools:context="com.example.mental.rpgo.grifos2">
 
     <Button
-        android:text="Button"
+        android:text="@string/activity_riddle2_btnAnswer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnAnswer2"
@@ -20,7 +20,7 @@
         android:layout_marginBottom="62dp" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/activity_riddle2_thetext2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/thetext2"
@@ -32,11 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/answer2"
         android:layout_marginTop="106dp"
         android:layout_marginEnd="53dp"
         android:layout_below="@+id/thetext2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="name" />
 </RelativeLayout>

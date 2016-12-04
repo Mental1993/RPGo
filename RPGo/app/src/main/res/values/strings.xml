@@ -5,4 +5,32 @@
     <string name="title_activity_user_sign_up">userSignUp</string>
     <string name="grifos2_p2">A box appears in front of you</string>
     <string name="TV_forgot_password">Forgot your password? Click <u>here</u></string>
+    <string name="forgot_password_btnSend">Send email</string>
+    <string name="forgot_password_TV_email">Enter email</string>
+    <string name="forgot_password_TV_username">Enter username</string>
+    <string name="activity_buttons_TV_mainmenu">MAIN MENU</string>
+    <string name="activity_buttons_btnlogout">LOG OUT</string>
+    <string name="activity_buttons_btnScan">SCAN</string>
+    <string name="activity_buttons_btnSack">SACK</string>
+    <string name="activity_buttons_btnMap">MAP</string>
+    <string name="activity_riddle2_thetext2">TextView</string>
+    <string name="activity_riddle2_btnAnswer2">BUTTON</string>
+    <string name="content_main_TextView_Tlog">Log In</string>
+    <string name="content_main_TV_pwdforgot">Forgot your password> Click here</string>
+    <string name="content_main_btnLogin">GO</string>
+    <string name="content_main_btnSignUp">SIGN UP</string>
+    <string name="content_riddle1_TextView_Text">What was Joan of Arc made of?</string>
+    <string name="content_riddle1_TextView_button4">SUBMIT</string>
+    <string name="content_riddle3_TextView_theText3">A locked door</string>
+    <string name="content_riddle3_btnAnswer3">SEND</string>
+    <string name="content_user_sign_up_TextView_TV_register">Register</string>
+    <string name="content_user_sign_up_TV_username">Username:</string>
+    <string name="content_user_sign_up_TV_password">Password:</string>
+    <string name="content_user_sign_up_TV_passStr">Password Strength:</string>
+    <string name="content_user_sign_up_TV_retypePass">Retype Password:</string>
+    <string name="content_user_sign_up_TV_email">E-mail:</string>
+    <string name="content_user_sign_up_TV_str">Not Inserted</string>
+<string name="content_user_sign_up_btnDone">SIGN UP</string>
+
+
 </resources>
