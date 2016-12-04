@@ -56,6 +56,7 @@ public class Buttons extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent intent = new Intent(Buttons.this, MainActivity.class);
                                 startActivity(intent);
+                                finish();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -66,5 +67,28 @@ public class Buttons extends AppCompatActivity {
                         .show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+        myAlert.setTitle("Logout")
+                .setMessage("You will be redirected to Log In screen. Are you sure?")
+                .setNegativeButton("No", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.dismiss();
+                    }
+                })
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Buttons.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .create();
+        myAlert.show();
     }
 }
