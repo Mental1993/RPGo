@@ -49,6 +49,24 @@ public class grifos3 extends AppCompatActivity
     }
     void part2()
     {
-        
+        Vtext.setText(getResources().getString(R.string.grifos3_p2));
+        E_Answer.setText("");
+        btn_Answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (E_Answer.getText().toString().equals("3")) {
+                    Toast.makeText(getApplicationContext(), "You're good", Toast.LENGTH_SHORT).show();
+                    part3();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "How many people were there?", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    void part3()
+    {
+
     }
 }

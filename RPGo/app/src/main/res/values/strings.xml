@@ -30,7 +30,9 @@
     <string name="content_user_sign_up_TV_retypePass">Retype Password:</string>
     <string name="content_user_sign_up_TV_email">E-mail:</string>
     <string name="content_user_sign_up_TV_str">Not Inserted</string>
-<string name="content_user_sign_up_btnDone">SIGN UP</string>
+    <string name="content_user_sign_up_btnDone">SIGN UP</string>
+    <string name="grifos3_p2">A painting is in front of you, there is a key pad underneath. On the painting it is written:
+        \'Two fathers and two sons sat down to eat eggs for breakfast. They ate exactly three eggs, each person had an egg.\'</string> />
 
 
 </resources>
