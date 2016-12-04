@@ -49,12 +49,20 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     @Override
     public void handleResult(Result rawResult)
     {
-        if(rawResult.getText().equals("grifos1")){
+        if(rawResult.getText().equals("grifos1"))
+        {
             startActivity(new Intent(Scanner.this,grifos1.class));
         }
-        else if(rawResult.getText().equals("grifos2")) {
+        else if(rawResult.getText().equals("grifos2"))
+        {
             startActivity(new Intent(Scanner.this, grifos2.class));
-        } else {
+        }
+        else if(rawResult.getText().equals("grifos3"))
+        {
+            startActivity(new Intent(Scanner.this, grifos3.class));
+        }
+        else
+        {
             Toast.makeText(getApplicationContext(), "Can't identify this QR code", Toast.LENGTH_SHORT).show();
         }
 
