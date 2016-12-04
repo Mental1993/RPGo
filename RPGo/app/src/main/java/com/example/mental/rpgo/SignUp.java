@@ -100,19 +100,24 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                boolean isOK, isDuplicateName, isDuplicateEmail;
                 String name = userN.getText().toString();
                 String pwd = pass.getText().toString();
                 String email = ET_email.getText().toString();
-                boolean isOK= mydb.insert_user(name, pwd, email);
-                if(isOK)
+                isDuplicateName = mydb.check_duplicate("name", name);
+                isDuplicateEmail = mydb.check_duplicate("email", email);
+                isOK= mydb.insert_user(name, pwd, email);
+                if(isOK && !isDuplicateName && !isDuplicateEmail)
                 {
                     Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUp.this, MainActivity.class);
                     startActivity(intent);
                 }
-                else
+                else if((isDuplicateName || isDuplicateEmail) && isOK)
                 {
-                    Toast.makeText(getApplicationContext(), "Sign up failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Sign up failed. Username or Email already exists.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Sign up failed.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

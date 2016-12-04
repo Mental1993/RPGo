@@ -84,4 +84,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public boolean check_duplicate(String fieldName, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + USER_COLUMN_ID + " FROM " + USER_TABLE_NAME + " WHERE " + fieldName + "='"+value+"'", null);
+        if(cursor.getCount() > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
 }
