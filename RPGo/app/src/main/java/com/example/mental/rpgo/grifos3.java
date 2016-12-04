@@ -1,5 +1,6 @@
 package com.example.mental.rpgo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -67,6 +68,25 @@ public class grifos3 extends AppCompatActivity
 
     void part3()
     {
+        Vtext.setText(getResources().getString(R.string.grifos3_p3));
+        E_Answer.setText("");
+        btn_Answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (E_Answer.getText().toString().equals("Fossils")||E_Answer.getText().toString().equals("fossils")) {
+                    Toast.makeText(getApplicationContext(), "Here's a knife, go to the next one now", Toast.LENGTH_SHORT).show();
 
+                    mydb= new DatabaseHelper(grifos3.this);
+                    int setter=Integer.parseInt(Global.getNogrif())+1;
+                    upd= mydb.update_user(setter,Integer.parseInt(Global.getId()));
+                    Global.setNogrif(String.valueOf(setter));
+
+                    startActivity(new Intent(grifos3.this, Buttons.class));
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Dinosaurs..", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
