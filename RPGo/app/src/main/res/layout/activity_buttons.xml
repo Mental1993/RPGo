@@ -12,7 +12,7 @@
     android:background="#006666">
 
     <TextView
-        android:text="MAIN MENU"
+        android:text="@string/activity_buttons_TV_mainmenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
@@ -23,7 +23,7 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:text="MAP"
+        android:text="@string/activity_buttons_btnMap"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
@@ -33,7 +33,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Scanner"
+        android:text="@string/activity_buttons_btnScan"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnScan"
@@ -43,7 +43,7 @@
         android:layout_marginTop="56dp" />
 
     <Button
-        android:text="sack"
+        android:text="@string/activity_buttons_btnSack"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnSack"
@@ -53,7 +53,7 @@
         android:layout_marginTop="84dp" />
 
     <Button
-        android:text="Log out"
+        android:text="@string/activity_buttons_btnlogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnlogout"

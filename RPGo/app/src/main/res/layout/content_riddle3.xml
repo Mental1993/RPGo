@@ -15,7 +15,7 @@
     android:background="#8af7ff">
 
     <Button
-        android:text="Send"
+        android:text="@string/content_riddle3_btnAnswer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnAnswer3"
@@ -36,7 +36,7 @@
         android:textAlignment="center" />
 
     <TextView
-        android:text="The door is locked"
+        android:text="@string/content_riddle3_TextView_theText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/theText3"
