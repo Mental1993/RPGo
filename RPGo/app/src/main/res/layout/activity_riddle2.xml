@@ -11,32 +11,38 @@
     tools:context="com.example.mental.rpgo.grifos2">
 
     <Button
-        android:text="@string/activity_riddle2_btnAnswer2"
+        android:text="Send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:id="@+id/btnAnswer2"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="62dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="@string/activity_riddle2_thetext2"
+        android:text="I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/thetext2"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColorLink="@android:color/holo_green_light"
+        android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:ems="10"
         android:id="@+id/answer2"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="53dp"
-        android:layout_below="@+id/thetext2"
-        android:layout_alignParentEnd="true"
-        android:hint="name" />
+        android:textAlignment="center"
+        android:hint="Answer Here"
+        android:layout_above="@+id/btnAnswer2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp" />
 </RelativeLayout>
