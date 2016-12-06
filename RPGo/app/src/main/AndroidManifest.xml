@@ -40,7 +40,8 @@
         <activity android:name=".grifos1" />
         <activity android:name=".grifos2" />
         <activity android:name=".grifos3" />
-        <activity android:name=".Forgot_password"></activity>
+        <activity android:name=".Forgot_password" />
+        <activity android:name=".grifos4"></activity>
     </application>
 
 </manifest>
