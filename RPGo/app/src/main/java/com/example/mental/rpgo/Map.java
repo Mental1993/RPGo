@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 
 import com.google.android.gms.maps.GoogleMap;
@@ -55,15 +56,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         }
 
         mMap.setMyLocationEnabled(true);
-
-
-
-
-
-       
-
-
-            if (Global.getId().equals("2")) {
+        if (Global.getNogrif().equals("2")) {
                 LatLng amaks = new LatLng(41.075958, 23.551359);//2o marker
                 mMap.addMarker(new MarkerOptions()
                         .position(amaks)
@@ -72,51 +65,32 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                 if (mMap != null) {
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(amaks, 16));
                 }
+        }else if (Global.getNogrif().equals("1")) {
+            LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
+            mMap.addMarker(new MarkerOptions()
+                    .position(TEI)
+                    .title("1os grifos")//.title("TEI Kentrikis Makedomias")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+            if (mMap != null) {
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
             }
-
-
-
-
-            if (Global.getId().equals("1")) {
-                //tsekarw to id tou xristi, an einai 1, bazw to point sto 1o stoxo
-                // auto se epomenh ekdosh 8a allaksei, kai 8a pairnei ton ari8mo tou grifou pou 8a eixei na lusei o xristis
-                LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
-                mMap.addMarker(new MarkerOptions()
-                        .position(TEI)
-                        .title("1os grifos")//.title("TEI Kentrikis Makedomias")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
-                if (mMap != null) {
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
-                }
-
-
-
-            if (Global.getId().equals("4")) {
-
+        }else if (Global.getNogrif().equals("4")) {
                 LatLng parko = new LatLng(41.079394, 23.548898);
                 mMap.addMarker(new MarkerOptions()
                         .position(parko)
                         .title("4os grifos")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parko, 16));
-            }
-
-
-
-                if (Global.getId().equals("3")) {
-
+        }else if (Global.getNogrif().equals("3")) {
                     LatLng nav = new LatLng(41.077753, 23.549063);
                     mMap.addMarker(new MarkerOptions()
                             .position(nav)
                             .title("3os grifos")
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nav, 16));
-                }
-
-
-
-            }
-
+        }
     }
+
 }
+
 
