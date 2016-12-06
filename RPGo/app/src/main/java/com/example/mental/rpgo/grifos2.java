@@ -32,7 +32,7 @@ public class grifos2 extends AppCompatActivity {
             public void onClick(View v) {
                 if (E_Answer.getText().toString().equals("The human brain") || E_Answer.getText().toString().equals("the human brain")) {
                     Toast.makeText(getApplicationContext(), "Here's a pick lock, use it wisely", Toast.LENGTH_SHORT).show();
-                    ;//to part 2 edw
+                    part2();
                 } else {
                     Toast.makeText(getApplicationContext(), "Nope!", Toast.LENGTH_SHORT).show();
                 }
