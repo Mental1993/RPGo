@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Tlog"
-        android:textSize="36dp"
+        android:textSize="36sp"
         android:layout_marginTop="32dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -29,7 +29,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/usr"
-        android:hint="Username/Email"
+        android:hint="@string/username_email"
         android:layout_below="@+id/Tlog"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp" />
@@ -62,7 +62,7 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/pwd"
-        android:hint="Password"
+        android:hint="@string/password"
         android:layout_below="@+id/usr"
         android:layout_alignStart="@+id/usr"
         android:text="" />

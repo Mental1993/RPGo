@@ -38,6 +38,7 @@ public class grifos1 extends AppCompatActivity {
                     mydb = new DatabaseHelper(grifos1.this);
                     int setter = Integer.parseInt(Global.getNogrif()) + 1;
                     upd = mydb.update_user(setter, Integer.parseInt(Global.getId()));
+                    Global.setNogrif(String.valueOf(setter));
                     mydb.close();
                     Toast.makeText(getApplicationContext(),"You are... correct! Next riddle is " + setter,Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(grifos1.this,Buttons.class));

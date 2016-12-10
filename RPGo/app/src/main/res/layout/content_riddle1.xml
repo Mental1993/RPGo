@@ -39,7 +39,7 @@
         android:ems="10"
         android:id="@+id/answer"
         android:textAlignment="center"
-        android:hint="Answer"
+        android:hint="@string/answer_here"
         android:textStyle="normal|italic"
         android:layout_marginTop="84dp"
         android:layout_below="@+id/Text"

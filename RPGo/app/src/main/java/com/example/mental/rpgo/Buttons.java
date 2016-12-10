@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Buttons extends AppCompatActivity {
 
-    Button scanner,sack,map,logout;
+    Button scanner,sack,map;
+    TextView TV_logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,7 @@ public class Buttons extends AppCompatActivity {
         scanner= (Button) findViewById(R.id.btnScan);
         sack= (Button) findViewById(R.id.btnSack);
         map= (Button) findViewById(R.id.btnMap);
-        logout= (Button) findViewById(R.id.btnlogout) ;
+        TV_logout = (TextView) findViewById(R.id.TV_logout);
 
 
         scanner.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +47,7 @@ public class Buttons extends AppCompatActivity {
             }
         });
 
-        logout.setOnClickListener(new View.OnClickListener()
+        TV_logout.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
@@ -67,6 +69,8 @@ public class Buttons extends AppCompatActivity {
                         .show();
             }
         });
+
+
     }
 
     @Override
