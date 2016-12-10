@@ -15,19 +15,15 @@ import org.robolectric.annotation.Config;
 
 import static java.lang.Boolean.TRUE;
 
-/**
- * Created by Zoi on 15/11/2016.
- */
 
 @LargeTest
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest = Config.NONE)
-public class TestLogin extends TestCase
-{
-    public DatabaseHelper db;
+public class dbTests extends TestCase {
+
+
+    public DatabaseHelper db; // basi dedomenwn
     boolean trg = TRUE;
-
-
     @Before
     public void setUp() throws Exception {
         super.setUp();
@@ -37,7 +33,24 @@ public class TestLogin extends TestCase
     }
 
     @Test
-    public void TestLogIn(){
+    public void testDbInsertion() {
+
+        // Given
+        boolean isIn=false;
+        String testName = "zwh";
+        String testPwd = "dimitris";
+        String testEmail = "email@example.com";
+
+
+        // When
+        isIn = db.insert_user(testName,testPwd, testEmail);
+
+        // Then
+        assertEquals(isIn, trg);
+    }
+
+    @Test
+    public void testLogIn(){
         String testName = "admin";
         String testPwd = "admin";
         String testEmail = "admin@admin.com";
@@ -50,6 +63,20 @@ public class TestLogin extends TestCase
             logged=false;
         }
         assertEquals(logged, trg);
+    }
+
+    @Test
+    public void update(){
+        boolean upd;
+        int id=1;
+        int grif=1;
+        upd= db.update_user(grif,id);
+        if(upd)
+        {
+            assertEquals(upd,trg);
+        }else{
+            assertEquals(upd,trg);
+        }
     }
 
     @After
