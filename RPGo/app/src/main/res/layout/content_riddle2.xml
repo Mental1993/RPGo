@@ -9,27 +9,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#8af7ff"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mental.rpgo.grifos2"
     tools:showIn="@layout/activity_riddle2">
 
-    <TextView
-        android:text="I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/thetext2"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:textColor="@android:color/holo_purple"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColorLink="@android:color/holo_green_light"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
     <Button
-        android:text="Send"
+        android:text="@string/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -44,8 +30,22 @@
         android:ems="10"
         android:id="@+id/answer2"
         android:textAlignment="center"
-        android:hint="Answer Here"
+        android:hint="@string/answer_here"
         android:layout_above="@+id/btnAnswer2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="29dp" />
+
+    <TextView
+        android:text="@string/grifos2_p1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/thetext2"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColorLink="@android:color/holo_green_light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

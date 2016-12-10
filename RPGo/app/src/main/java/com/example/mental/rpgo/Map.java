@@ -56,38 +56,42 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         }
 
         mMap.setMyLocationEnabled(true);
-        if (Global.getNogrif().equals("2")) {
+        if (Global.getNogrif().equals("1")) {
+            LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
+            mMap.addMarker(new MarkerOptions()
+                    .position(TEI)
+                    .title("Riddle 1")//.title("TEI Kentrikis Makedomias")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+            if (mMap != null) {
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
+            }
+        }else if (Global.getNogrif().equals("2")) {
                 LatLng amaks = new LatLng(41.075958, 23.551359);//2o marker
                 mMap.addMarker(new MarkerOptions()
                         .position(amaks)
-                        .title("2os grifos")
+                        .title("Riddle 2")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
                 if (mMap != null) {
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(amaks, 16));
                 }
-        }else if (Global.getNogrif().equals("1")) {
-            LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
+        }else if (Global.getNogrif().equals("3")) {
+            LatLng nav = new LatLng(41.077753, 23.549063);
             mMap.addMarker(new MarkerOptions()
-                    .position(TEI)
-                    .title("1os grifos")//.title("TEI Kentrikis Makedomias")
+                    .position(nav)
+                    .title("Riddle 3")
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
-            if (mMap != null) {
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(TEI, 16));
+            if(mMap != null) {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nav, 16));
             }
         }else if (Global.getNogrif().equals("4")) {
                 LatLng parko = new LatLng(41.079394, 23.548898);
                 mMap.addMarker(new MarkerOptions()
                         .position(parko)
-                        .title("4os grifos")
+                        .title("Riddle 4")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+            if(mMap != null) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parko, 16));
-        }else if (Global.getNogrif().equals("3")) {
-                    LatLng nav = new LatLng(41.077753, 23.549063);
-                    mMap.addMarker(new MarkerOptions()
-                            .position(nav)
-                            .title("3os grifos")
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nav, 16));
+            }
         }
     }
 

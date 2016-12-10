@@ -44,13 +44,14 @@ public class Forgot_password extends AppCompatActivity {
                 cs = dbHelper.user_exists(username_entered, email_entered);
                 if((cs != null) && cs.moveToFirst()) {
                     password = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_PASSWORD));
-                    Toast.makeText(getApplicationContext(), "If the email provided is valid, we sent your password there.", Toast.LENGTH_LONG).show();
-                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                    emailIntent.setData(Uri.parse("mailto:example@example.com?cc=alice@example.com&subject=Important%20message&body=Your%20password%20is%20:%20" + password + ".%20Oh%20wait%20you%20are%20not%20supposed%20to%20see%20this!"));
-                    startActivity(emailIntent);
+                    Toast.makeText(getApplicationContext(), "Your password is " + password, Toast.LENGTH_LONG).show();
+
                 }else {
                     Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_SHORT).show();
                 }
+
+                cs.close();
+                dbHelper.close();
             }
         });
     }

@@ -52,12 +52,14 @@
         android:layout_alignStart="@+id/btnMap"
         android:layout_marginTop="84dp" />
 
-    <Button
-        android:text="@string/activity_buttons_btnlogout"
+    <TextView
+        android:text="@string/log_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnlogout"
-        style="@android:style/Widget.Material.Light.Button.Inset"
-        android:layout_above="@+id/btnScan"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/TV_logout"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="normal|italic" />
 </RelativeLayout>

@@ -37,6 +37,18 @@
     <string name="title_activity_grifos4">grifos4</string>
     <string name="grifos4_p2">How many sides has a circle</string>
     <string name="grifos4_p3">What is always on its way here, but never arrives?</string>
+    <string name="password_again">Password again</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="answer_here">Answer Here</string>
+    <string name="send">Send</string>
+    <string name="riddle4">The poor have me, the rich need me, and if you eat me, you\'ll die.</string>
+    <string name="pick_lock">Pick Lock</string>
+    <string name="knife">Knife</string>
+    <string name="log_out">Log out</string>
+    <string name="e_mail">E-mail</string>
+    <string name="grifos2_p1">I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?</string>
+    <string name="username_email">Username/Email</string>
     />
 
 
