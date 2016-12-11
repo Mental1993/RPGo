@@ -11,31 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mental.rpgo.sack"
-    tools:showIn="@layout/activity_sack">
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pickL"
-        android:layout_marginTop="17dp"
-        android:visibility="invisible">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pick_lock"
-            android:id="@+id/imPick" />
-
-        <TextView
-            android:text="@string/pick_lock"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/pickName"
-            android:textSize="30sp"
-            android:layout_weight="1"
-            android:textAlignment="center" />
-    </LinearLayout>
+    tools:showIn="@layout/activity_sack"
+    android:background="#2C3E54">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -58,9 +35,47 @@
             android:text="@string/knife"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="#009A9A"
             android:id="@+id/knifeName"
             android:layout_weight="1"
             android:textSize="30sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <TextView
+        android:text="INVENTORY"
+        android:textColor="#009A9A"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pickL"
+        android:layout_marginTop="32dp"
+        android:visibility="invisible"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pick_lock"
+            android:id="@+id/imPick" />
+
+        <TextView
+            android:text="@string/pick_lock"
+            android:layout_width="0dp"
+            android:textColor="#009A9A"
+            android:layout_height="wrap_content"
+            android:id="@+id/pickName"
+            android:textSize="30sp"
+            android:layout_weight="1"
             android:textAlignment="center" />
     </LinearLayout>
 </RelativeLayout>
