@@ -43,12 +43,12 @@
     </LinearLayout>
 
     <TextView
-        android:text="INVENTORY"
+        android:text="@string/inventory"
         android:textColor="#009A9A"
         android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
+        android:id="@+id/TV_inventory"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp" />
@@ -59,7 +59,7 @@
         android:id="@+id/pickL"
         android:layout_marginTop="32dp"
         android:visibility="invisible"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/TV_inventory"
         android:layout_alignParentStart="true">
 
         <ImageView

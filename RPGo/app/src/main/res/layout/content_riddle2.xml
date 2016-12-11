@@ -21,27 +21,12 @@
         android:id="@+id/thetext2"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textColor="@android:color/holo_purple"
-        android:textSize="32sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textColorLink="@android:color/holo_green_light"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:ems="10"
-        android:id="@+id/answer2"
-        android:textAlignment="center"
-        android:hint="@string/answer_here"
-        android:layout_below="@+id/thetext2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp"
-        android:textColor="@android:color/black"
-        android:textStyle="normal|italic"
-        android:textColorHint="@android:color/black" />
 
     <Button
         android:text="@string/send"
@@ -53,4 +38,19 @@
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
         android:background="@android:color/holo_purple"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/answer2"
+        android:textAlignment="center"
+        android:hint="@string/answer_here"
+        android:layout_marginTop="72dp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal|italic"
+        android:textColorHint="@android:color/black"
+        android:layout_below="@+id/thetext2"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

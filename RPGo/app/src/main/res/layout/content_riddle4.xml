@@ -29,17 +29,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="@string/send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAnswer4"
-        android:layout_marginBottom="327dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp"
-        android:background="@android:color/holo_purple"/>
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,11 +37,20 @@
         android:id="@+id/answer4"
         android:textAlignment="center"
         android:hint="@string/answer_here"
-        android:layout_marginBottom="17dp"
-        android:layout_above="@+id/btnAnswer4"
-        android:layout_centerHorizontal="true"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
-        android:textStyle="normal|italic" />
+        android:textStyle="normal|italic"
+        android:layout_below="@+id/thetext4"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAnswer4"
+        android:textSize="18sp"
+        android:background="@android:color/holo_purple"
+        android:layout_below="@+id/answer4"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
