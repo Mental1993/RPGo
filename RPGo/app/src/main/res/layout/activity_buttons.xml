@@ -47,32 +47,6 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="@string/riddle_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/TV_mainenu"
-        android:layout_alignParentStart="true"
-        android:id="@+id/TV_progress_text"
-        android:textColor="#009A9A"
-        android:textSize="20sp"
-        android:textStyle="normal|bold" />
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/PB_riddle"
-        android:minHeight="30dp"
-        android:maxHeight="40dp"
-        android:minWidth="150dp"
-        android:maxWidth="200dp"
-        android:layout_below="@+id/TV_mainenu"
-        android:layout_alignParentStart="true"
-        android:visibility="visible"
-        tools:visibility="visible"
-        android:progressDrawable="@drawable/progressbar"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/PB_riddle"
@@ -103,11 +77,40 @@
         android:id="@+id/TV_mainenu"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#009A9A"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="normal|bold|italic"
         android:textAllCaps="false"
-        android:layout_alignBaseline="@+id/TV_logout"
+        android:layout_above="@+id/btnScan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="95dp" />
+
+    <TextView
+        android:text="@string/riddle_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_progress_text"
+        android:textColor="#009A9A"
+        android:textSize="16sp"
+        android:textStyle="normal|bold"
         android:layout_alignBottom="@+id/TV_logout"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PB_riddle"
+        android:minHeight="30dp"
+        android:maxHeight="40dp"
+        android:minWidth="150dp"
+        android:maxWidth="200dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:progressDrawable="@drawable/progressbar"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/TV_progress_text"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/TV_mainenu"
+        android:layout_alignEnd="@+id/TV_progress_text" />
 
 </RelativeLayout>
