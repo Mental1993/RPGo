@@ -4,16 +4,19 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Buttons extends AppCompatActivity {
 
     Button scanner,sack,map;
-    TextView TV_logout;
+    TextView TV_logout, TV_riddle_progress;
+    ProgressBar PB_riddle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,12 @@ public class Buttons extends AppCompatActivity {
         sack= (Button) findViewById(R.id.btnSack);
         map= (Button) findViewById(R.id.btnMap);
         TV_logout = (TextView) findViewById(R.id.TV_logout);
-
+        PB_riddle = (ProgressBar) findViewById(R.id.PB_riddle);
+        TV_riddle_progress = (TextView) findViewById(R.id.TV_riddle_progress);
+        // MISSING!! -- SET MAX DYNAMICALLY -- MISSING -- RIDDLES STORED IN DATABASE
+        PB_riddle.setMax(4);
+        PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
+        TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 4);
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override

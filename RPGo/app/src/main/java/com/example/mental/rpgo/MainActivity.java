@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,8 +16,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText ETuser,ETpwd;
-    TextView TV_pwdforgot;
-    Button btnLogIn, btnSignUp;
+    TextView TV_pwdforgot, TV_signup;
+    Button btnLogIn;
     DatabaseHelper mydb;
     String player_Id="0";
     String player_nogrif="0";
@@ -24,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mydb = new DatabaseHelper(this);
         ETuser = (EditText) findViewById(R.id.usr);
         ETpwd = (EditText) findViewById(R.id.pwd);
         btnLogIn = (Button) findViewById(R.id.btnLogIn);
-        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        TV_signup = (TextView) findViewById(R.id.TV_signup);
         TV_pwdforgot = (TextView) findViewById(R.id.TV_pwdforgot);
         gl = new Global();
         btnLogIn.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        TV_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SignUp.class);

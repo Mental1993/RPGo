@@ -17,11 +17,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Tlog"
-        android:textSize="36sp"
+        android:textSize="40sp"
         android:layout_marginTop="32dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="30dp"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -32,29 +34,10 @@
         android:hint="@string/username_email"
         android:layout_below="@+id/Tlog"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp" />
-
-    <TextView
-        android:text="@string/TV_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TV_pwdforgot"
-        android:textSize="16sp"
-        android:layout_below="@+id/pwd"
-        android:layout_alignStart="@+id/pwd"
-        android:layout_marginTop="21dp"
-        android:clickable="true"
-        android:textColor="?attr/editTextColor" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/content_main_btnLogin"
-        android:id="@+id/btnLogIn"
-        android:layout_marginEnd="40dp"
-        android:layout_alignBaseline="@+id/btnSignUp"
-        android:layout_alignBottom="@+id/btnSignUp"
-        android:layout_toStartOf="@+id/btnSignUp" />
+        android:layout_marginTop="39dp"
+        android:textColorHint="@android:color/white"
+        android:textStyle="normal|italic"
+        android:textSize="18sp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -65,16 +48,56 @@
         android:hint="@string/password"
         android:layout_below="@+id/usr"
         android:layout_alignStart="@+id/usr"
-        android:text="" />
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textStyle="normal|italic" />
+
+    <TextView
+        android:text="@string/TV_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_pwdforgot"
+        android:textSize="14sp"
+        android:layout_marginTop="21dp"
+        android:clickable="true"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/pwd"
+        android:layout_alignStart="@+id/pwd" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/content_main_btnSignUp"
-        android:id="@+id/btnSignUp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginTop="75dp"
+        android:text="@string/login"
+        android:id="@+id/btnLogIn"
+        android:background="#009A9A"
+        android:textColor="@android:color/white"
         android:layout_below="@+id/TV_pwdforgot"
+        android:layout_alignStart="@+id/TV_pwdforgot"
+        android:layout_marginTop="19dp"
         android:layout_alignEnd="@+id/pwd" />
+
+    <TextView
+        android:text="@string/not_registered_yet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/TV_notregistered"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/btnLogIn"
+        android:layout_alignStart="@+id/btnLogIn"
+        android:textSize="16sp" />
+
+    <TextView
+        android:text="@string/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_signup"
+        android:textColor="@android:color/white"
+        android:clickable="true"
+        android:layout_alignBaseline="@+id/TV_notregistered"
+        android:layout_alignBottom="@+id/TV_notregistered"
+        android:layout_alignEnd="@+id/TV_pwdforgot"
+        android:textSize="16sp" />
 
 </RelativeLayout>

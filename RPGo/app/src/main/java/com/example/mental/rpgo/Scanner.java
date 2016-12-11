@@ -50,15 +50,35 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     public void handleResult(Result rawResult)
     {
         if(rawResult.getText().equals("grifos1")) {
-            startActivity(new Intent(Scanner.this,grifos1.class));
+            if(Integer.parseInt(Global.getNogrif()) == 1) {
+                startActivity(new Intent(Scanner.this, grifos1.class));
+            }else {
+                startActivity(new Intent(Scanner.this, Buttons.class));
+                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
+            }
         }
         else if(rawResult.getText().equals("grifos2")) {
-            startActivity(new Intent(Scanner.this, grifos2.class));
+            if(Integer.parseInt(Global.getNogrif()) == 2 ) {
+                startActivity(new Intent(Scanner.this, grifos2.class));
+            }else {
+                startActivity(new Intent(Scanner.this, Buttons.class));
+                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
+            }
         }
         else if(rawResult.getText().equals("grifos3")) {
-            startActivity(new Intent(Scanner.this, grifos3.class));
+            if(Integer.parseInt(Global.getNogrif()) == 3) {
+                startActivity(new Intent(Scanner.this, grifos3.class));
+            }else {
+                startActivity(new Intent(Scanner.this, Buttons.class));
+                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
+            }
         }else if(rawResult.getText().equals("grifos4")) {
-            startActivity(new Intent(Scanner.this, grifos4.class));
+            if(Integer.parseInt(Global.getNogrif()) == 4) {
+                startActivity(new Intent(Scanner.this, grifos4.class));
+            }else {
+                startActivity(new Intent(Scanner.this, Buttons.class));
+                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
+            }
         }
         else {
             Toast.makeText(getApplicationContext(), "Can't identify this QR code", Toast.LENGTH_SHORT).show();

@@ -40,7 +40,6 @@ public class Forgot_password extends AppCompatActivity {
                 password = "";
                 username_entered = ET_username.getText().toString();
                 email_entered = ET_email.getText().toString();
-                //Toast.makeText(getApplicationContext(), "this is your id : " + Global.getId(), Toast.LENGTH_LONG).show();
                 cs = dbHelper.user_exists(username_entered, email_entered);
                 if((cs != null) && cs.moveToFirst()) {
                     password = cs.getString(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_PASSWORD));
