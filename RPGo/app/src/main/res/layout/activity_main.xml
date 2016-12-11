@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.mental.rpgo.MainActivity"
-    android:background="#8af7ff">
+    android:background="#2C3E54">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

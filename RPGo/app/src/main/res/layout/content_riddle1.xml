@@ -4,18 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/black"
-    android:backgroundTint="@android:color/holo_blue_bright">
+    android:background="#8af7ff">
 
     <Button
-        android:text="@string/content_riddle1_TextView_button4"
+        android:text="@string/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:id="@+id/button4"
         android:textAlignment="center"
         android:layout_below="@+id/answer"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_purple"
+        android:textSize="18sp" />
 
     <TextView
         android:text="@string/content_riddle1_TextView_Text"
@@ -43,6 +44,8 @@
         android:textStyle="normal|italic"
         android:layout_marginTop="84dp"
         android:layout_below="@+id/Text"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black" />
 
 </RelativeLayout>

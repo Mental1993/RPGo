@@ -6,6 +6,7 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
 
     private static String id;
     private static String Nogrif ;
+    private static float riddle_progress;
 
     public static String getId() {
         return id;
@@ -20,4 +21,5 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
     public static void setNogrif(String newNogrif) {
         Nogrif = newNogrif;
     }
+
 }

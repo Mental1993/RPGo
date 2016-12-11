@@ -5,7 +5,7 @@
     <string name="title_activity_user_sign_up">userSignUp</string>
     <string name="grifos2_p2">A box appears in front of you</string>
     <string name="TV_forgot_password">Forgot your password? Click <u>here</u></string>
-    <string name="forgot_password_btnSend">Send email</string>
+    <string name="forgot_password_btnSend">Show password</string>
     <string name="forgot_password_TV_email">Enter email</string>
     <string name="forgot_password_TV_username">Enter username</string>
     <string name="activity_buttons_TV_mainmenu">MAIN MENU</string>
@@ -45,10 +45,14 @@
     <string name="riddle4">The poor have me, the rich need me, and if you eat me, you\'ll die.</string>
     <string name="pick_lock">Pick Lock</string>
     <string name="knife">Knife</string>
-    <string name="log_out">Log out</string>
+    <string name="log_out"><u>Logout</u></string>
     <string name="e_mail">E-mail</string>
     <string name="grifos2_p1">I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?</string>
     <string name="username_email">Username/Email</string>
+    <string name="login">Login</string>
+    <string name="not_registered_yet">Not registered yet?</string>
+    <string name="sign_up"><u>Sign up</u></string>
+    <string name="riddle_progress">Riddle progress</string>
     />
 
 

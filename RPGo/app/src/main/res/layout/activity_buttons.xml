@@ -9,28 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mental.rpgo.Buttons"
-    android:background="#006666">
-
-    <TextView
-        android:text="@string/activity_buttons_TV_mainmenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:id="@+id/TV_mainenu"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:text="@string/activity_buttons_btnMap"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:id="@+id/btnMap"
-        style="@android:style/Widget.Material.Light.Button.Inset"
-        android:layout_below="@+id/btnSack"
-        android:layout_centerHorizontal="true" />
+    android:background="#2C3E54">
 
     <Button
         android:text="@string/activity_buttons_btnScan"
@@ -38,9 +17,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnScan"
         style="@android:style/Widget.Material.Light.Button.Inset"
-        android:layout_below="@+id/TV_mainenu"
+        android:background="#009A9A"
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/btnSack"
         android:layout_alignStart="@+id/btnSack"
-        android:layout_marginTop="56dp" />
+        android:layout_marginBottom="44dp" />
 
     <Button
         android:text="@string/activity_buttons_btnSack"
@@ -48,18 +29,88 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnSack"
         style="@android:style/Widget.Material.Light.Button.Inset"
-        android:layout_alignTop="@+id/btnScan"
-        android:layout_alignStart="@+id/btnMap"
-        android:layout_marginTop="84dp" />
+        android:background="#009A9A"
+        android:textColor="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/btnMap" />
+
+    <Button
+        android:text="@string/activity_buttons_btnMap"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/btnMap"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:background="#009A9A"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/btnSack"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/PB_riddle"
+        android:layout_toEndOf="@+id/PB_riddle"
+        android:id="@+id/TV_riddle_progress"
+        android:textColor="#009A9A"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:textStyle="normal|bold" />
 
     <TextView
         android:text="@string/log_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:id="@+id/TV_logout"
         android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="normal|italic"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/activity_buttons_TV_mainmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_mainenu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#009A9A"
+        android:textSize="22sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_above="@+id/btnScan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="95dp" />
+
+    <TextView
+        android:text="@string/riddle_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_progress_text"
+        android:textColor="#009A9A"
         android:textSize="16sp"
-        android:textStyle="normal|italic" />
+        android:textStyle="normal|bold"
+        android:layout_alignBottom="@+id/TV_logout"
+        android:layout_alignParentStart="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PB_riddle"
+        android:minHeight="30dp"
+        android:maxHeight="40dp"
+        android:minWidth="150dp"
+        android:maxWidth="200dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:progressDrawable="@drawable/progressbar"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/TV_progress_text"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/TV_mainenu"
+        android:layout_alignEnd="@+id/TV_progress_text" />
+
 </RelativeLayout>
