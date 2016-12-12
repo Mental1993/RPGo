@@ -47,6 +47,7 @@
         <activity android:name=".grifos2" />
         <activity android:name=".grifos3" />
         <activity android:name=".Forgot_password" />
+        <activity android:name=".IntroSequenceActivity" />
         <activity android:name=".grifos4"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data

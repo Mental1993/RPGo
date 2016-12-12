@@ -44,4 +44,7 @@ dependencies {
     androidTestCompile 'com.android.support.test:rules:0.5'
     //scanner
     compile 'me.dm7.barcodescanner:zxing:1.9'
+    //intro
+    compile 'com.github.worker8:tourguide:1.0.17-SNAPSHOT@aar'
+    compile 'net.i2p.android.ext:floatingactionbutton:1.9.0'
 }

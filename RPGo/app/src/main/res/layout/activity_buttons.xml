@@ -82,7 +82,8 @@
         android:textAllCaps="false"
         android:layout_above="@+id/btnScan"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="95dp" />
+        android:layout_marginBottom="95dp"
+        android:clickable="true" />
 
     <TextView
         android:text="@string/riddle_progress"
@@ -111,6 +112,7 @@
         android:layout_below="@+id/TV_progress_text"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/TV_mainenu"
-        android:layout_alignEnd="@+id/TV_progress_text" />
+        android:layout_alignEnd="@+id/TV_progress_text"
+        android:clickable="true" />
 
 </RelativeLayout>

@@ -34,6 +34,8 @@ public class Buttons extends AppCompatActivity {
         PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
         TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 4);
 
+        startActivity(new Intent(Buttons.this,IntroSequenceActivity.class));
+
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
