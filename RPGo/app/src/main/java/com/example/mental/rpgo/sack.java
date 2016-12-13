@@ -3,6 +3,7 @@ package com.example.mental.rpgo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,7 +27,13 @@ public class sack extends AppCompatActivity {
 
         Lpick=(LinearLayout) findViewById(R.id.pickL);
         Lknife=(LinearLayout) findViewById(R.id.knifeL);
-        
+
+        if(Integer.parseInt(Global.getNogrif())>2){
+            Lpick.setVisibility(View.VISIBLE);
+        }
+        if(Integer.parseInt(Global.getNogrif())>3){
+            Lknife.setVisibility(View.VISIBLE);
+        }
 
     }
 }
