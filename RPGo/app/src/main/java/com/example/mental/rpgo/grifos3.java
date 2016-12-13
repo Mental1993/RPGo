@@ -68,11 +68,13 @@ public class grifos3 extends AppCompatActivity
 
     void part3()
     {
+
         Vtext.setText(getResources().getString(R.string.grifos3_p3));
         E_Answer.setText("");
         btn_Answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (E_Answer.getText().toString().equals("Fossils")||E_Answer.getText().toString().equals("fossils")) {
                     Toast.makeText(getApplicationContext(), "Here's a knife, go to the next one now", Toast.LENGTH_SHORT).show();
 
