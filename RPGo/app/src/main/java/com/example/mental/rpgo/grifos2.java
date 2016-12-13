@@ -18,6 +18,7 @@ public class grifos2 extends AppCompatActivity {
     DatabaseHelper mydb;
     Boolean upd;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class grifos2 extends AppCompatActivity {
             }
         });
     }
+
     //part 2
 
     void part2() {

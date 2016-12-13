@@ -21,10 +21,12 @@ public class grifos4 extends AppCompatActivity {
     TextView Vtext;
     DatabaseHelper mydb;
     Boolean upd;
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
+
     private GoogleApiClient client;
 
     @Override
@@ -91,6 +93,7 @@ public class grifos4 extends AppCompatActivity {
             }
         });
     }
+
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.

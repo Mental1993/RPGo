@@ -43,7 +43,9 @@ public class grifos1 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"You are... correct! Next riddle is " + setter,Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(grifos1.this,Buttons.class));
                 }
+
                 else
+
                 {
                     Toast.makeText(getApplicationContext(), "Nope!", Toast.LENGTH_SHORT).show();
                 }
