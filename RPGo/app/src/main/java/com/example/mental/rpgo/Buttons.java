@@ -34,7 +34,9 @@ public class Buttons extends AppCompatActivity {
         PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
         TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 4);
 
-        startActivity(new Intent(Buttons.this,IntroSequenceActivity.class));
+        if(Integer.parseInt(Global.getNogrif()) < 2) {
+            startActivity(new Intent(Buttons.this, IntroSequenceActivity.class));
+        }
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +48,7 @@ public class Buttons extends AppCompatActivity {
         sack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "I'm not ready yet", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Buttons.this, sack.class));
             }
         });
 
