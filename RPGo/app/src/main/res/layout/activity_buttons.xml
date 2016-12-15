@@ -12,29 +12,6 @@
     android:background="#2C3E54">
 
     <Button
-        android:text="@string/activity_buttons_btnScan"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnScan"
-        style="@android:style/Widget.Material.Light.Button.Inset"
-        android:background="#009A9A"
-        android:textColor="@android:color/white"
-        android:layout_above="@+id/btnSack"
-        android:layout_alignStart="@+id/btnSack"
-        android:layout_marginBottom="44dp" />
-
-    <Button
-        android:text="@string/activity_buttons_btnSack"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSack"
-        style="@android:style/Widget.Material.Light.Button.Inset"
-        android:background="#009A9A"
-        android:textColor="@android:color/white"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/btnMap" />
-
-    <Button
         android:text="@string/activity_buttons_btnMap"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
@@ -114,5 +91,40 @@
         android:layout_toStartOf="@+id/TV_mainenu"
         android:layout_alignEnd="@+id/TV_progress_text"
         android:clickable="true" />
+
+    <Button
+        android:text="@string/activity_buttons_btnScan"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnScan"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:background="#009A9A"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/TV_riddle_progress"
+        android:layout_alignStart="@+id/btnSack"
+        android:layout_marginTop="56dp" />
+
+    <Button
+        android:text="@string/activity_buttons_btnSack"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSack"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:background="#009A9A"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/btnScan"
+        android:layout_alignStart="@+id/btnMap"
+        android:layout_marginTop="44dp" />
+
+    <Button
+        android:text="@string/achivements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMap"
+        android:layout_alignStart="@+id/btnMap"
+        android:layout_marginTop="35dp"
+        android:id="@+id/btnAchivements"
+        android:layout_alignEnd="@+id/btnMap"
+        android:background="#009A9A" />
 
 </RelativeLayout>

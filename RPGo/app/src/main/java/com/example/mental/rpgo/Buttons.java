@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Buttons extends AppCompatActivity {
 
-    Button scanner,sack,map;
+    Button scanner,sack,map, achivements;
     TextView TV_logout, TV_riddle_progress;
     ProgressBar PB_riddle;
     DatabaseHelper mydb;
@@ -29,6 +29,7 @@ public class Buttons extends AppCompatActivity {
         scanner= (Button) findViewById(R.id.btnScan);
         sack= (Button) findViewById(R.id.btnSack);
         map= (Button) findViewById(R.id.btnMap);
+        achivements = (Button) findViewById(R.id.btnAchivements);
         TV_logout = (TextView) findViewById(R.id.TV_logout);
         PB_riddle = (ProgressBar) findViewById(R.id.PB_riddle);
         TV_riddle_progress = (TextView) findViewById(R.id.TV_riddle_progress);
@@ -62,6 +63,13 @@ public class Buttons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Buttons.this, Map.class));
+            }
+        });
+
+        achivements.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Buttons.this, Achivements.class));
             }
         });
 
@@ -114,7 +122,7 @@ public class Buttons extends AppCompatActivity {
 
     public void timePlayedAchivement(DatabaseHelper mydb) {
         double secondsPLayed = ((TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))-mydb.getTimestamp(Global.getId()));
-        if(secondsPLayed > 84500) {
+        if(secondsPLayed > 84500*7) {
             Toast.makeText(getApplicationContext(), "You have successfully completed the TIME PLAYED Achivement!" + secondsPLayed, Toast.LENGTH_LONG).show();
         }
     }
