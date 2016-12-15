@@ -13,6 +13,7 @@
 
     <!-- Permission to receive Google Maps -->
     <uses-permission android:name="com.example.app.permission.MAPS_RECEIVE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -46,14 +47,19 @@
         <activity android:name=".grifos1" />
         <activity android:name=".grifos2" />
         <activity android:name=".grifos3" />
-        <activity android:name=".sack"/>
+        <activity android:name=".sack" />
         <activity android:name=".Forgot_password" />
         <activity android:name=".IntroSequenceActivity" />
-        <activity android:name=".grifos4"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity android:name=".grifos4" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".Achivements"></activity>
     </application>
 
 </manifest>
