@@ -55,6 +55,10 @@
     <string name="riddle_progress">Riddle progress</string>
     <string name="inventory">INVENTORY</string>
     <string name="achivements">Achivements</string>
+    <string name="achivement">Achivement</string>
+    <string name="descryption">Descryption</string>
+    <string name="time_passed">Time Passed</string>
+    <string name="incomplete">Incomplete</string>
     />
 
 

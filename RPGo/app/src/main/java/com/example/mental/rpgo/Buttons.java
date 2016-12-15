@@ -122,8 +122,9 @@ public class Buttons extends AppCompatActivity {
 
     public void timePlayedAchivement(DatabaseHelper mydb) {
         double secondsPLayed = ((TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))-mydb.getTimestamp(Global.getId()));
-        if(secondsPLayed > 84500*7) {
+        if(secondsPLayed > 2000) {
             Toast.makeText(getApplicationContext(), "You have successfully completed the TIME PLAYED Achivement!" + secondsPLayed, Toast.LENGTH_LONG).show();
+            Global.setAchivement_timePassed(true);
         }
     }
 }
