@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity {
     EditText ETuser,ETpwd;
     TextView TV_pwdforgot, TV_signup;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         TV_signup = (TextView) findViewById(R.id.TV_signup);
         TV_pwdforgot = (TextView) findViewById(R.id.TV_pwdforgot);
         gl = new Global();
+
+
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("cat", player_nogrif);
                     gl.setId(player_Id);
                     gl.setNogrif(player_nogrif);
-                    Toast.makeText(getApplicationContext(), "Successful Login", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Buttons.class);
                     mydb.close();
                     startActivity(intent);
@@ -87,9 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     private Boolean exit = false;
@@ -107,8 +107,8 @@ public class MainActivity extends AppCompatActivity {
                     exit = false;
                 }
             }, 3 * 1000);
-
         }
-
     }
+
+
 }

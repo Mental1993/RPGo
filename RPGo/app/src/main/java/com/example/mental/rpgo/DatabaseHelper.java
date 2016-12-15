@@ -19,17 +19,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_PASSWORD = "password";
     public static final String USER_COLUMN_EMAIL = "email";
     public static final String USER_COLUMN_NOGRIF = "nogrif";
+    public static final String USER_COLUMN_TIMESTAMP = "timestamp";
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 5);
+        super(context, DATABASE_NAME , null, 7);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL( "CREATE TABLE user " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER)");
-        db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1);");
+        db.execSQL( "CREATE TABLE user " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_TIMESTAMP + " REAL)");
+        db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1, 0);");
     }
 
     @Override
@@ -44,7 +45,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " " + USER_COLUMN_EMAIL + "='"+email+"' AND " + USER_COLUMN_PASSWORD + "='"+pwd+"')", null );
         return res;
     }
-    public boolean insert_user(String name, String pwd, String newemail) {
+
+    public double getTimestamp(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        double timestamp = 10;
+        Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_TIMESTAMP + " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_ID + "='"+id+"'", null );
+        if(res != null && res.moveToFirst()) {
+            timestamp = Double.valueOf(res.getDouble(res.getColumnIndex(USER_COLUMN_TIMESTAMP)));
+            return timestamp;
+        }
+        return timestamp;
+    }
+
+
+    public boolean insert_user(String name, String pwd, String newemail, double timestamp) {
 
 
         boolean insertSuccessful = false;
@@ -55,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(USER_COLUMN_PASSWORD, pwd);
         values.put(USER_COLUMN_EMAIL, newemail);
         values.put(USER_COLUMN_NOGRIF, 1);
+        values.put(USER_COLUMN_TIMESTAMP, timestamp);
 
         SQLiteDatabase db = this.getWritableDatabase();
 
