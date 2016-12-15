@@ -12,11 +12,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.concurrent.TimeUnit;
+
 public class Buttons extends AppCompatActivity {
 
     Button scanner,sack,map;
     TextView TV_logout, TV_riddle_progress;
     ProgressBar PB_riddle;
+    DatabaseHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +36,13 @@ public class Buttons extends AppCompatActivity {
         PB_riddle.setMax(4);
         PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
         TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 4);
+        mydb = new DatabaseHelper(this);
 
-        startActivity(new Intent(Buttons.this,IntroSequenceActivity.class));
+        timePlayedAchivement(mydb);
+
+        if(Integer.parseInt(Global.getNogrif()) < 2) {
+            startActivity(new Intent(Buttons.this, IntroSequenceActivity.class));
+        }
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +54,7 @@ public class Buttons extends AppCompatActivity {
         sack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "I'm not ready yet", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Buttons.this, sack.class));
             }
         });
 
@@ -79,8 +87,6 @@ public class Buttons extends AppCompatActivity {
                         .show();
             }
         });
-
-
     }
 
     @Override
@@ -104,5 +110,12 @@ public class Buttons extends AppCompatActivity {
                 })
                 .create();
         myAlert.show();
+    }
+
+    public void timePlayedAchivement(DatabaseHelper mydb) {
+        double secondsPLayed = ((TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))-mydb.getTimestamp(Global.getId()));
+        if(secondsPLayed > 84500) {
+            Toast.makeText(getApplicationContext(), "You have successfully completed the TIME PLAYED Achivement!" + secondsPLayed, Toast.LENGTH_LONG).show();
+        }
     }
 }

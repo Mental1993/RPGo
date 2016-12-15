@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.concurrent.TimeUnit;
 
 import static android.graphics.Color.GRAY;
 
@@ -91,11 +94,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass.getText().toString().equals(s.toString())) {
+                    match.setTextColor(Color.GREEN);
                     match.setText("Match");
                     if (num > 4) {
                         btnDone.setEnabled(true);
                     }
                 } else {
+                    match.setTextColor(Color.RED);
                     match.setText("Mismatch");
                     btnDone.setEnabled(false);
                 }
@@ -113,7 +118,7 @@ public class SignUp extends AppCompatActivity {
                 String email = ET_email.getText().toString();
                 isDuplicateName = mydb.check_duplicate("name", name);
                 isDuplicateEmail = mydb.check_duplicate("email", email);
-                isOK= mydb.insert_user(name, pwd, email);
+                isOK= mydb.insert_user(name, pwd, email, TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
                 if(isOK && !isDuplicateName && !isDuplicateEmail)
                 {
                     Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();
