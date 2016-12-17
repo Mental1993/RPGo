@@ -1,12 +1,21 @@
 package com.example.mental.rpgo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import com.google.android.gms.maps.GoogleMap;
@@ -17,15 +26,20 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Map extends FragmentActivity implements OnMapReadyCallback {
+
+public class Map extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
+    private Keys key;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+
+        key = new Keys();
 
         String provider = android.provider.Settings.Secure.getString(
                 getContentResolver(),
@@ -43,6 +57,11 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
+        //Resources res = getResources();
+        //Drawable drawable = res.getDrawable(R.drawable.key);
+        BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.key);
+        Bitmap b=bitmapdraw.getBitmap();
+        Bitmap smallMarker = Bitmap.createScaledBitmap(b, 50, 50, false);
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -56,6 +75,10 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         }
 
         mMap.setMyLocationEnabled(true);
+        for(int i=0; i<8; i++) {
+            key.generateKey(mMap, smallMarker);
+        }
+
         if (Global.getNogrif().equals("1")) {
             LatLng TEI = new LatLng(41.074033, 23.552689); //1o marker
             mMap.addMarker(new MarkerOptions()
@@ -92,9 +115,37 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
             if(mMap != null) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parko, 16));
             }
+        }else if(Global.getNogrif().equals("5")){
+            LatLng bp = new LatLng(41.082157, 23.549396);
+            mMap.addMarker(new MarkerOptions()
+                    .position(bp)
+                    .title("Riddle 5")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+            if(mMap != null) {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bp, 16));
+            }
         }
     }
 
+    @Override
+    public void onLocationChanged(Location location) {
+        Toast.makeText(getApplicationContext(), "Location changed!", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
 }
 
 

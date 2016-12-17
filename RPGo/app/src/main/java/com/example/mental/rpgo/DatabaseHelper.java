@@ -27,20 +27,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_EMAIL = "email";
     public static final String USER_COLUMN_NOGRIF = "nogrif";
     public static final String USER_COLUMN_TIMESTAMP = "timestamp";
+    public static final String USER_COLUMN_KEYS = "keys_count";
     public static final String ACHIVEMENT_COLUMN_ID = "ach_id";
     public static final String ACHIVEMENT_COLUMN_NAME = "ach_name";
     public static final String ACHIVEMENT_COLUMN_DESC = "ach_desc";
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 8);
+        super(context, DATABASE_NAME , null, 9);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         //create user table and add admin account
-        db.execSQL( "CREATE TABLE " + USER_TABLE_NAME + " " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_TIMESTAMP + " REAL)");
+        db.execSQL( "CREATE TABLE " + USER_TABLE_NAME + " " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_KEYS + " INTEGER, " + USER_COLUMN_TIMESTAMP + " REAL)");
         db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1, 0);");
 
         //create achivement table
@@ -56,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS " + USER_TABLE_NAME);
             db.execSQL("DROP TABLE IF EXISTS " + ACHIVEMENT_TABLE_NAME);
             onCreate(db);
-        }
+    }
 
     public List<AchivementObject> getAll() {
         List<AchivementObject> achivements = new ArrayList<AchivementObject>();
@@ -87,6 +88,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_ID + "," + USER_COLUMN_NOGRIF + " FROM " + USER_TABLE_NAME + " WHERE (" + USER_COLUMN_NAME + "='"+name+"' AND " + USER_COLUMN_PASSWORD + "='"+pwd+"') OR (" +
                 " " + USER_COLUMN_EMAIL + "='"+email+"' AND " + USER_COLUMN_PASSWORD + "='"+pwd+"')", null );
         return res;
+    }
+
+    public int getKeys(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int keys_count;
+        Cursor res = db.rawQuery("SELECT " + USER_COLUMN_KEYS + " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_ID + "='"+id+"'", null);
+        if(res.moveToFirst() && res != null) {
+            keys_count = res.getInt(res.getColumnIndex(USER_COLUMN_KEYS));
+            return keys_count;
+        }else {
+            return 0;
+        }
     }
 
     public double getTimestamp(String id) {
