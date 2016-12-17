@@ -7,6 +7,7 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
     private static String id;
     private static String Nogrif ;
     private static boolean achivement_timePassed = false, achivement_locVisited = false, achivement_riddlesSolved = false;
+    private static int keys_count;
 
     public static String getId() {
         return id;
@@ -32,8 +33,6 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
     public static boolean getAchivement_riddlesSolved () { return achivement_riddlesSolved; }
     public static void setAchivement_riddlesSolved (boolean value) { achivement_riddlesSolved = value; }
 
-
-
-
-
+    public static int getKeys_count() { return keys_count; }
+    public static void setKeys_count(int keys_count) { Global.keys_count = keys_count; }
 }
