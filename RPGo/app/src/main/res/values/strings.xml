@@ -58,7 +58,8 @@
     <string name="achivement">Achivement</string>
     <string name="descryption">Descryption</string>
     <string name="time_passed">Time Passed</string>
-    <string name="incomplete">Incomplete</string>
+    <string name="status_incomplete">Status : Incomplete</string>
+    <string name="status_complete">Status : Complete</string>
     />
 
 

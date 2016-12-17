@@ -39,10 +39,11 @@ public class TestInputTest extends TestCase {
         String testName= "zwh";
         String testPwd= "dimitris";
         String testMail= "testmail@mail.com";
+        double testTimestamp = 12345678;
         boolean trg= true;
 
         //When
-        isIn = db.insert_user(testName,testPwd,testMail);
+        isIn = db.insert_user(testName,testPwd,testMail, testTimestamp);
 
         //Then
         assertEquals(isIn,trg);

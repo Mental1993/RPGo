@@ -82,6 +82,7 @@ public class grifos3 extends AppCompatActivity
                     int setter=Integer.parseInt(Global.getNogrif())+1;
                     upd= mydb.update_user(setter,Integer.parseInt(Global.getId()));
                     Global.setNogrif(String.valueOf(setter));
+                    Global.setAchivement_riddlesSolved(true);
 
                     startActivity(new Intent(grifos3.this, Buttons.class));
                 }

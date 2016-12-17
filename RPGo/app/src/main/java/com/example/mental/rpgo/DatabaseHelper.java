@@ -3,8 +3,14 @@ package com.example.mental.rpgo;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.lang.reflect.Array;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Mental on 8/11/2016.
@@ -14,30 +20,67 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "appDb.db";
     public static final String USER_TABLE_NAME = "user";
+    public static final String ACHIVEMENT_TABLE_NAME = "achivement";
     public static final String USER_COLUMN_ID = "id";
     public static final String USER_COLUMN_NAME = "name";
     public static final String USER_COLUMN_PASSWORD = "password";
     public static final String USER_COLUMN_EMAIL = "email";
     public static final String USER_COLUMN_NOGRIF = "nogrif";
     public static final String USER_COLUMN_TIMESTAMP = "timestamp";
+    public static final String ACHIVEMENT_COLUMN_ID = "ach_id";
+    public static final String ACHIVEMENT_COLUMN_NAME = "ach_name";
+    public static final String ACHIVEMENT_COLUMN_DESC = "ach_desc";
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 7);
+        super(context, DATABASE_NAME , null, 8);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL( "CREATE TABLE user " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_TIMESTAMP + " REAL)");
+        //create user table and add admin account
+        db.execSQL( "CREATE TABLE " + USER_TABLE_NAME + " " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_TIMESTAMP + " REAL)");
         db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1, 0);");
+
+        //create achivement table
+        db.execSQL("CREATE TABLE " + ACHIVEMENT_TABLE_NAME + " " + "(" + ACHIVEMENT_COLUMN_ID + " INTEGER PRIMARY KEY, " + ACHIVEMENT_COLUMN_NAME + " VARCHAR, " + ACHIVEMENT_COLUMN_DESC + " VARCHAR)");
+        db.execSQL("INSERT INTO " + ACHIVEMENT_TABLE_NAME + " VALUES(1, 'Time passed', 'Achivement completed when 1 week is passed since the user sign up date.');");
+        db.execSQL("INSERT INTO " + ACHIVEMENT_TABLE_NAME + " VALUES(2, 'Locations visited', 'Achivement completed when the user visits 3 locations.');");
+        db.execSQL("INSERT INTO " + ACHIVEMENT_TABLE_NAME + " VALUES(3, 'Riddles solved', 'Achivement completed when the user completes 3 riddles.');");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             db.execSQL("DROP TABLE IF EXISTS " + USER_TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + ACHIVEMENT_TABLE_NAME);
             onCreate(db);
         }
+
+    public List<AchivementObject> getAll() {
+        List<AchivementObject> achivements = new ArrayList<AchivementObject>();
+        AchivementObject ach = null;
+        Cursor c = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            c = db.rawQuery("SELECT * FROM " + ACHIVEMENT_TABLE_NAME, null);
+            if(c.moveToFirst()) {
+                do {
+                    ach = new AchivementObject();
+                    ach.setId(c.getInt(c.getColumnIndex(ACHIVEMENT_COLUMN_ID)));
+                    ach.setName(c.getString(c.getColumnIndex(ACHIVEMENT_COLUMN_NAME)));
+                    ach.setDesc(c.getString(c.getColumnIndex(ACHIVEMENT_COLUMN_DESC)));
+                    achivements.add(ach);
+                }while(c.moveToNext());
+            }
+            return achivements;
+        }finally {
+            if(c != null) {
+                c.close();
+            }
+        }
+    }
 
     public Cursor getID(String name, String pwd, String email) {
         SQLiteDatabase db = this.getReadableDatabase();
