@@ -80,6 +80,14 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
                 Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
             }
         }
+        else if(rawResult.getText().equals("grifos5")) {
+            if(Integer.parseInt(Global.getNogrif()) == 5) {
+                startActivity(new Intent(Scanner.this, grifos5.class));
+            }else {
+                startActivity(new Intent(Scanner.this, Buttons.class));
+                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
+            }
+        }
         else {
             Toast.makeText(getApplicationContext(), "Can't identify this QR code", Toast.LENGTH_SHORT).show();
         }

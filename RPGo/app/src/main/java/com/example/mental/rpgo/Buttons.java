@@ -34,9 +34,9 @@ public class Buttons extends AppCompatActivity {
         PB_riddle = (ProgressBar) findViewById(R.id.PB_riddle);
         TV_riddle_progress = (TextView) findViewById(R.id.TV_riddle_progress);
         // MISSING!! -- SET MAX DYNAMICALLY -- MISSING -- RIDDLES STORED IN DATABASE
-        PB_riddle.setMax(4);
+        PB_riddle.setMax(5);
         PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
-        TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 4);
+        TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 5);
         mydb = new DatabaseHelper(this);
 
         timePlayedAchivement(mydb);
