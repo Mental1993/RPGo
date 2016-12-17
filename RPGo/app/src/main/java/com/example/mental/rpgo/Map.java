@@ -92,6 +92,15 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
             if(mMap != null) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parko, 16));
             }
+        }else if(Global.getNogrif().equals("5")){
+            LatLng bp = new LatLng(41.082157, 23.549396);
+            mMap.addMarker(new MarkerOptions()
+                    .position(bp)
+                    .title("Riddle 5")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+            if(mMap != null) {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bp, 16));
+            }
         }
     }
 

@@ -43,6 +43,9 @@
     <string name="answer_here">Answer Here</string>
     <string name="send">Send</string>
     <string name="riddle4">The poor have me, the rich need me, and if you eat me, you\'ll die.</string>
+    <string name="riddle5">What is harder to catch the faster you run?</string>
+    <string name="riddle5p2">I don\'t have eyes, but once I did see. Once I had thoughts, but now I\'m white and empty.</string>
+    <string name="riddle5p3">Which vehicle is spelled the same forwards and backwards?</string>
     <string name="pick_lock">Pick Lock</string>
     <string name="knife">Knife</string>
     <string name="log_out"><u>Logout</u></string>

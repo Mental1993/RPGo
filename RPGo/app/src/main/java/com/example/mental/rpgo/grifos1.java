@@ -27,8 +27,8 @@ public class grifos1 extends AppCompatActivity {
         setContentView(R.layout.activity_riddle1);
 
         btn_Answer= (Button) findViewById(R.id.button4);
-        E_Answer= (EditText) findViewById(R.id.answer);
-        Text= (TextView) findViewById(R.id.Text);
+        E_Answer= (EditText) findViewById(R.id.answer5);
+        Text= (TextView) findViewById(R.id.thetext5);
 
         btn_Answer.setOnClickListener(new View.OnClickListener(){
 

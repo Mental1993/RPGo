@@ -37,6 +37,7 @@ public class IntroSequenceActivity extends ActionBarActivity {
         final Button button = (Button)findViewById(R.id.btnScan);
         final Button button2 = (Button)findViewById(R.id.btnSack);
         final Button button3 = (Button)findViewById(R.id.btnMap);
+        final Button button4 = (Button)findViewById(R.id.btnAchivements);
         final TextView textView = (TextView)findViewById(TV_mainenu);
         final TextView textView1 = (TextView)findViewById(TV_logout);
         final ProgressBar progressBar = (ProgressBar)findViewById(PB_riddle);
@@ -54,7 +55,7 @@ public class IntroSequenceActivity extends ActionBarActivity {
                 .setToolTip(new ToolTip()
                         .setTitle("Welcome!")
                         .setDescription("This is the main menu. I'll guide you through.")
-                        .setGravity(Gravity.RIGHT)
+                        .setGravity(Gravity.BOTTOM|Gravity.CENTER)
                 )
                 .setOverlay(new Overlay()
                         .setEnterAnimation(enterAnimation)
@@ -112,9 +113,21 @@ public class IntroSequenceActivity extends ActionBarActivity {
             public void onClick(View v) {
                 mTutorialHandler.cleanUp();
                 mTutorialHandler.setToolTip(new ToolTip()
-                .setTitle("Log Out")
-                .setDescription("Log out and return to log in screen")
-                .setGravity(Gravity.BOTTOM|Gravity.LEFT))
+                .setTitle("Achievements")
+                .setDescription("See which achievements you have unlocked")
+                .setGravity(Gravity.BOTTOM|Gravity.CENTER))
+                        .playOn(button4);
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTutorialHandler.cleanUp();
+                mTutorialHandler.setToolTip(new ToolTip()
+                        .setTitle("Log Out")
+                        .setDescription("Log out and return to log in screen")
+                        .setGravity(Gravity.BOTTOM|Gravity.LEFT))
                         .playOn(textView1);
             }
         });
