@@ -40,10 +40,11 @@ public class dbTests extends TestCase {
         String testName = "zwh";
         String testPwd = "dimitris";
         String testEmail = "email@example.com";
+        double testTimestamp = 12345678;
 
 
         // When
-        isIn = db.insert_user(testName,testPwd, testEmail);
+        isIn = db.insert_user(testName,testPwd, testEmail, testTimestamp);
 
         // Then
         assertEquals(isIn, trg);
