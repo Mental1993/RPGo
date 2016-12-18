@@ -42,29 +42,34 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         mContext = getApplicationContext();
+        mydb = new DatabaseHelper(this);
         locationListener = new LocationListener() {
+            int i;
             @Override
             public void onLocationChanged(Location location) {
-                for(int i=0; i<Global.getKeys_loc().size(); i++) {
-                    if(location.distanceTo(Global.getKeys_loc().get(i)) < 10000) {
-                        mydb.setLoc_visited(Global.getId(), mydb.getLoc_visited(Global.getId())+1);
-                        if(mydb.getLoc_visited(Global.getId()) >= 3) {
-                            Global.setAchivement_locVisited(true);
+                for(i=0; i<Global.getKeys_loc().size(); i++) {
+                    if(location.distanceTo(Global.getKeys_loc().get(i)) < 5000) {
+                        mydb.setLoc_visited(Global.getId(), mydb.getLoc_visited(Global.getId()) + 1);
+                        if(mydb.getLoc_visited(Global.getId()) > 2) {
+                            if(Global.getAchivement_locVisited() != true) {
+                                Global.setAchivement_locVisited(true);
+                                Toast.makeText(getApplicationContext(), "You have completed loc visited achivement", Toast.LENGTH_LONG).show();
+                            }
                         }
-                        mydb.setKeys(Global.getId(), mydb.getKeys(Global.getId())+1);
-                        if(mydb.getKeys(Global.getId()) >= 3) {
-                            Global.setAchivement_keysCollected(true);
+                        mydb.setKeys(Global.getId(), mydb.getKeys(Global.getId()) + 1);
+                        if(mydb.getKeys(Global.getId()) > 2) {
+                            if(Global.getAchivement_keysCollected() != true) {
+                                Global.setAchivement_keysCollected(true);
+                                Toast.makeText(getApplicationContext(), "You have completed keys collected achivement", Toast.LENGTH_LONG).show();
+                            }
+
                         }
-                        if(mydb.deleteKeys_loc(Global.getKeys_loc().get(i).getLatitude())) {
-                            Toast.makeText(getApplicationContext(), "location deleted", Toast.LENGTH_LONG).show();
+                        if(mydb.deleteKeys_loc(i+1)) {
                             Global.getKeys_loc().remove(i);
                             mMap.clear();
                             onMapReady(mMap);
-
-
                         }
-                    }else {
-                        Toast.makeText(getApplicationContext(), "DIstance to a random location is " + location.distanceTo(Global.getKeys_loc().get(1)), Toast.LENGTH_LONG).show();
+                        break;
                     }
                 }
             }

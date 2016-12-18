@@ -25,7 +25,7 @@ public class Achivements extends AppCompatActivity {
         TV_Ach_2_status = (TextView) findViewById(R.id.TV_Ach_2_status);
         TV_Ach_3_status = (TextView) findViewById(R.id.TV_Ach_3_status);
         TV_Ach_4_status = (TextView) findViewById(R.id.TV_Ach_4_status);
-        int[] textViewIDs = new int[] {R.id.TV_Ach_1_name, R.id.TV_Ach_1_desc, R.id.TV_Ach_2_name, R.id.TV_Ach_2_desc, R.id.TV_Ach_3_name, R.id.TV_Ach_3_desc };
+        int[] textViewIDs = new int[] {R.id.TV_Ach_1_name, R.id.TV_Ach_1_desc, R.id.TV_Ach_2_name, R.id.TV_Ach_2_desc, R.id.TV_Ach_3_name, R.id.TV_Ach_3_desc, R.id.TV_Ach_4_name, R.id.TV_Ach_4_desc };
 
         //Fill widgets with values
         if(Global.getAchivement_timePassed()) { TV_Ach_1_status.setText(R.string.status_complete); TV_Ach_1_status.setBackgroundColor(Color.GREEN); }
@@ -43,6 +43,9 @@ public class Achivements extends AppCompatActivity {
             }else if(i<6) {
                 if (i % 2 == 0) { tv.setText(achivementsList.get(2).getName()); }
                 else { tv.setText(achivementsList.get(2).getDesc()); }
+            }else if(i<8) {
+                if (i % 2 == 0) { tv.setText(achivementsList.get(3).getName()); }
+                else { tv.setText(achivementsList.get(3).getDesc()); }
             }
         }
     }

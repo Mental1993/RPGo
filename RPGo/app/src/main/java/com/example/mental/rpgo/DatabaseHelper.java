@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 17);
+        super(context, DATABASE_NAME , null, 18);
     }
 
 
@@ -127,9 +127,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
-    public boolean deleteKeys_loc(double lat) {
+    public boolean deleteKeys_loc(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("DELETE FROM " + KEYS_LOCATION_TABLE_NAME + " WHERE " + KEYS_LOCATION_COLUMN_LAT + "='"+lat+"'", null);
+        Cursor res = db.rawQuery("DELETE FROM " + KEYS_LOCATION_TABLE_NAME + " WHERE " + KEYS_LOCATION_COLUMN_ID + "='"+id+"'", null);
         if( res != null) {
             return true;
         }else {
