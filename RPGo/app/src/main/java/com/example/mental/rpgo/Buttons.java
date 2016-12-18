@@ -45,8 +45,6 @@ public class Buttons extends AppCompatActivity {
         key = new Keys();
 
         timePlayedAchivement(mydb);
-        keysRemainingTime(mydb);
-        checkKeysLocList();
 
 
 
@@ -136,32 +134,6 @@ public class Buttons extends AppCompatActivity {
         if(secondsPLayed > 20000) {
             Toast.makeText(getApplicationContext(), "You have successfully completed the TIME PLAYED Achivement!" + secondsPLayed, Toast.LENGTH_LONG).show();
             Global.setAchivement_timePassed(true);
-        }
-    }
-
-    public void keysRemainingTime(DatabaseHelper mydb) {
-        double timePassed = (TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()) - mydb.getTimestamp(Global.getId()));
-        if(timePassed > mydb.getKeysTimestamp(Global.getId())) {
-            Toast.makeText(getApplicationContext(), "key time passed. regenerating locations. " + timePassed, Toast.LENGTH_LONG).show();
-            for(int i=0; i<8; i++) {
-                Global.setKeys_location(key.getRandomLocation());
-            }
-            mydb.setKeysTimestamp(Global.KEYS_REGENERATE_INTERVAL, Global.getId());
-        }else {
-            double time = Global.KEYS_REGENERATE_INTERVAL-timePassed;
-            if(mydb.setKeysTimestamp(time, Global.getId())){
-                Toast.makeText(getApplicationContext(), "db value : " + mydb.getKeysTimestamp(Global.getId()) + "actual = " + time, Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "query not run", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    public void checkKeysLocList() {
-        if(Global.getKeys_location().size()==0) {
-            for(int i=0; i<8; i++) {
-                Global.setKeys_location(key.getRandomLocation());
-            }
         }
     }
 }

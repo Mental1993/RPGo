@@ -32,13 +32,11 @@ public class Keys {
 
 
     public void generateKey(GoogleMap map, Bitmap icon, int i) {
-        DatabaseHelper mydb;
-        mydb = new DatabaseHelper(Map.getContext());
-        Location loc = Global.getKeys_location(i);
+        Location loc = Global.getKeys_loc().get(i);
         LatLng pos = new LatLng(loc.getLatitude(), loc.getLongitude());
         map.addMarker(new MarkerOptions()
                 .position(pos)
-                .title("Time remaining" + mydb.getKeysTimestamp(Global.getId()))
+                .title("Key Location")
                 .icon(BitmapDescriptorFactory.fromBitmap(icon))
         );
     }

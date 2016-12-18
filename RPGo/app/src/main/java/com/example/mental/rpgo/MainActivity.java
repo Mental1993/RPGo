@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         TV_pwdforgot = (TextView) findViewById(R.id.TV_pwdforgot);
         gl = new Global();
 
+        mydb.fillKeysLoc(Global.getKeys_loc());
+
 
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -120,13 +120,10 @@ public class SignUp extends AppCompatActivity {
                 String email = ET_email.getText().toString();
                 isDuplicateName = mydb.check_duplicate("name", name);
                 isDuplicateEmail = mydb.check_duplicate("email", email);
-                isOK= mydb.insert_user(name, pwd, email, 0, Global.KEYS_REGENERATE_INTERVAL, TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+                isOK= mydb.insert_user(name, pwd, email, 0, 0, Global.KEYS_REGENERATE_INTERVAL, TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
                 if(isOK && !isDuplicateName && !isDuplicateEmail)
                 {
                     Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();
-                    for(int i=0; i<8; i++) {
-                        Global.setKeys_location(key.getRandomLocation());
-                    }
                     Intent intent = new Intent(SignUp.this, MainActivity.class);
                     startActivity(intent);
                 }

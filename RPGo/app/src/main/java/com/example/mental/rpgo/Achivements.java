@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Achivements extends AppCompatActivity {
 
-    TextView TV_Ach_1_status, TV_Ach_2_status, TV_Ach_3_status;
+    TextView TV_Ach_1_status, TV_Ach_2_status, TV_Ach_3_status, TV_Ach_4_status;
     List<AchivementObject> achivementsList;
     DatabaseHelper db;
 
@@ -24,12 +24,14 @@ public class Achivements extends AppCompatActivity {
         TV_Ach_1_status = (TextView) findViewById(R.id.TV_Ach_1_status);
         TV_Ach_2_status = (TextView) findViewById(R.id.TV_Ach_2_status);
         TV_Ach_3_status = (TextView) findViewById(R.id.TV_Ach_3_status);
+        TV_Ach_4_status = (TextView) findViewById(R.id.TV_Ach_4_status);
         int[] textViewIDs = new int[] {R.id.TV_Ach_1_name, R.id.TV_Ach_1_desc, R.id.TV_Ach_2_name, R.id.TV_Ach_2_desc, R.id.TV_Ach_3_name, R.id.TV_Ach_3_desc };
 
         //Fill widgets with values
         if(Global.getAchivement_timePassed()) { TV_Ach_1_status.setText(R.string.status_complete); TV_Ach_1_status.setBackgroundColor(Color.GREEN); }
         if(Global.getAchivement_riddlesSolved()) { TV_Ach_2_status.setText(R.string.status_complete); TV_Ach_2_status.setBackgroundColor(Color.GREEN); }
         if(Global.getAchivement_locVisited()) { TV_Ach_3_status.setText(R.string.status_complete); TV_Ach_3_status.setBackgroundColor(Color.GREEN); }
+        if(Global.getAchivement_keysCollected()) { TV_Ach_4_status.setText(R.string.status_complete); TV_Ach_4_status.setBackgroundColor(Color.GREEN);}
         for(int i=0; i < textViewIDs.length; i++) {
             TextView tv = (TextView ) findViewById(textViewIDs[i]);
             if(i<2) {
