@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.lang.reflect.Array;
 import java.sql.Statement;
@@ -28,21 +29,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_NOGRIF = "nogrif";
     public static final String USER_COLUMN_TIMESTAMP = "timestamp";
     public static final String USER_COLUMN_KEYS = "keys_count";
+    public static final String USER_COLUMN_KEYS_TIMESTAMP = "keys_timestamp";
     public static final String ACHIVEMENT_COLUMN_ID = "ach_id";
     public static final String ACHIVEMENT_COLUMN_NAME = "ach_name";
     public static final String ACHIVEMENT_COLUMN_DESC = "ach_desc";
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 9);
+        super(context, DATABASE_NAME , null, 11);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         //create user table and add admin account
-        db.execSQL( "CREATE TABLE " + USER_TABLE_NAME + " " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_KEYS + " INTEGER, " + USER_COLUMN_TIMESTAMP + " REAL)");
-        db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1, 0);");
+        db.execSQL( "CREATE TABLE " + USER_TABLE_NAME + " " + "(" + USER_COLUMN_ID + " INTEGER PRIMARY KEY, " + USER_COLUMN_NAME + " VARCHAR, " + USER_COLUMN_PASSWORD + " VARCHAR, " + USER_COLUMN_EMAIL + " VARCHAR, " + USER_COLUMN_NOGRIF + " INTEGER, " + USER_COLUMN_KEYS + " INTEGER, "+ USER_COLUMN_KEYS_TIMESTAMP + " REAL, " + USER_COLUMN_TIMESTAMP + " REAL)");
+        db.execSQL("INSERT INTO " + USER_TABLE_NAME + " VALUES(1, 'admin', 'admin', 'admin@admin.com', 1, 0, 0, 0);");
 
         //create achivement table
         db.execSQL("CREATE TABLE " + ACHIVEMENT_TABLE_NAME + " " + "(" + ACHIVEMENT_COLUMN_ID + " INTEGER PRIMARY KEY, " + ACHIVEMENT_COLUMN_NAME + " VARCHAR, " + ACHIVEMENT_COLUMN_DESC + " VARCHAR)");
@@ -113,17 +115,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return timestamp;
     }
 
+    public double getKeysTimestamp(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        double keys_timestamp = 10;
+        Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_KEYS_TIMESTAMP + " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_ID + "='"+id+"'", null );
+        if(res != null && res.moveToFirst()) {
+            keys_timestamp = Double.valueOf(res.getDouble(res.getColumnIndex(USER_COLUMN_KEYS_TIMESTAMP)));
+            return keys_timestamp;
+        }
+        return keys_timestamp;
+    }
 
-    public boolean insert_user(String name, String pwd, String newemail, double timestamp) {
-
-
-        boolean insertSuccessful = false;
-
+    public boolean setKeysTimestamp(double timeRemaining, String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(USER_COLUMN_KEYS_TIMESTAMP, timeRemaining);
+        String where = USER_COLUMN_ID + "=" + id;
+        try {
+            db.update(USER_TABLE_NAME, values, where, null);
+            return true;
+        }catch (Exception e) { return false; }
+    }
 
+
+    public boolean insert_user(String name, String pwd, String newemail, int keys_count, double keys_timestamp, double timestamp) {
+        boolean insertSuccessful = false;
+        ContentValues values = new ContentValues();
         values.put(USER_COLUMN_NAME, name);
         values.put(USER_COLUMN_PASSWORD, pwd);
         values.put(USER_COLUMN_EMAIL, newemail);
+        values.put(USER_COLUMN_KEYS, keys_count);
+        values.put(USER_COLUMN_KEYS_TIMESTAMP, keys_timestamp);
         values.put(USER_COLUMN_NOGRIF, 1);
         values.put(USER_COLUMN_TIMESTAMP, timestamp);
 

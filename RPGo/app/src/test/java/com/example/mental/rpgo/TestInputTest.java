@@ -43,7 +43,7 @@ public class TestInputTest extends TestCase {
         boolean trg= true;
 
         //When
-        isIn = db.insert_user(testName,testPwd,testMail, testTimestamp);
+        isIn = db.insert_user(testName,testPwd,testMail, 0, testTimestamp, testTimestamp);
 
         //Then
         assertEquals(isIn,trg);

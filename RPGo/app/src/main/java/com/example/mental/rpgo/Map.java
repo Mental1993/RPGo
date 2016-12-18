@@ -29,15 +29,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Map extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
+    private static Context mContext;
     private GoogleMap mMap;
     private Keys key;
+    DatabaseHelper mydb;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-
+        mContext = getApplicationContext();
 
         key = new Keys();
 
@@ -53,12 +55,13 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, Locatio
         mapFragment.getMapAsync(this);
     }
 
+    public static Context getContext() {
+        return mContext;
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
-        //Resources res = getResources();
-        //Drawable drawable = res.getDrawable(R.drawable.key);
         BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.key);
         Bitmap b=bitmapdraw.getBitmap();
         Bitmap smallMarker = Bitmap.createScaledBitmap(b, 50, 50, false);
@@ -76,7 +79,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, Locatio
 
         mMap.setMyLocationEnabled(true);
         for(int i=0; i<8; i++) {
-            key.generateKey(mMap, smallMarker);
+            key.generateKey(mMap, smallMarker, i);
         }
 
         if (Global.getNogrif().equals("1")) {
