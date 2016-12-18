@@ -124,6 +124,7 @@ public class SignUp extends AppCompatActivity {
                 if(isOK && !isDuplicateName && !isDuplicateEmail)
                 {
                     Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();
+                    mydb.fillKeysLoc(Global.getKeys_loc());
                     Intent intent = new Intent(SignUp.this, MainActivity.class);
                     startActivity(intent);
                 }
