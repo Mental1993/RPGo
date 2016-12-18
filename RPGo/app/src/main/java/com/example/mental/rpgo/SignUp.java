@@ -29,6 +29,7 @@ public class SignUp extends AppCompatActivity {
     Button btnDone;
     Integer num;
     DatabaseHelper mydb;
+    Keys key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class SignUp extends AppCompatActivity {
         ET_email = (EditText) findViewById(R.id.ET_email);
         TV_email = (TextView) findViewById(R.id.TV_email);
         num = 0;
+        key = new Keys();
 
         pass.addTextChangedListener(new TextWatcher() {
             @Override
@@ -118,7 +120,7 @@ public class SignUp extends AppCompatActivity {
                 String email = ET_email.getText().toString();
                 isDuplicateName = mydb.check_duplicate("name", name);
                 isDuplicateEmail = mydb.check_duplicate("email", email);
-                isOK= mydb.insert_user(name, pwd, email, TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+                isOK= mydb.insert_user(name, pwd, email, 0, 0, Global.KEYS_REGENERATE_INTERVAL, TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
                 if(isOK && !isDuplicateName && !isDuplicateEmail)
                 {
                     Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();

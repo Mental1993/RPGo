@@ -16,6 +16,7 @@ import java.util.Random;
 
 public class Keys {
 
+
     //Keys attributes
     private String name;
 
@@ -30,25 +31,28 @@ public class Keys {
     }
 
 
-    public void generateKey(GoogleMap map, Bitmap icon) {
-        LatLng key = getRandomLocation();
+    public void generateKey(GoogleMap map, Bitmap icon, int i) {
+        Location loc = Global.getKeys_loc().get(i);
+        LatLng pos = new LatLng(loc.getLatitude(), loc.getLongitude());
         map.addMarker(new MarkerOptions()
-                .position(key)
-                .title("Randrom key")
+                .position(pos)
+                .title("Key Location")
                 .icon(BitmapDescriptorFactory.fromBitmap(icon))
         );
     }
 
     //Generate a random location fairly close to the user's location
-    public LatLng getRandomLocation() {
+    public Location getRandomLocation() {
         Random lat = new Random();
-        double lowLat = 40.5500000;
+        double lowLat = 40.5000000;
         double resLat = 1.001*lat.nextDouble() + lowLat;
 
         Random lng = new Random();
-        double lowLng = 23.2500000;
+        double lowLng = 23.2000000;
         double resLng = 1.001*lng.nextDouble() + lowLng;
-
-        return new LatLng(resLat, resLng);
+        Location loc = new Location("Key");
+        loc.setLatitude(resLat);
+        loc.setLongitude(resLng);
+        return loc;
     }
 }

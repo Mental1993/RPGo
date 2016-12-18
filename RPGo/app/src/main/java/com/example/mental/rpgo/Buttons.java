@@ -3,6 +3,7 @@ package com.example.mental.rpgo;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Buttons extends AppCompatActivity {
@@ -20,6 +23,7 @@ public class Buttons extends AppCompatActivity {
     TextView TV_logout, TV_riddle_progress;
     ProgressBar PB_riddle;
     DatabaseHelper mydb;
+    Keys key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +42,11 @@ public class Buttons extends AppCompatActivity {
         PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
         TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 5);
         mydb = new DatabaseHelper(this);
+        key = new Keys();
 
         timePlayedAchivement(mydb);
+
+
 
         if(Integer.parseInt(Global.getNogrif()) < 2) {
             startActivity(new Intent(Buttons.this, IntroSequenceActivity.class));
@@ -84,6 +91,7 @@ public class Buttons extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent intent = new Intent(Buttons.this, MainActivity.class);
                                 startActivity(intent);
+                                //mydb.close();
                                 finish();
                             }
                         })
@@ -113,6 +121,7 @@ public class Buttons extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(Buttons.this, MainActivity.class);
                         startActivity(intent);
+                        //mydb.close();
                         finish();
                     }
                 })
@@ -122,7 +131,7 @@ public class Buttons extends AppCompatActivity {
 
     public void timePlayedAchivement(DatabaseHelper mydb) {
         double secondsPLayed = ((TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))-mydb.getTimestamp(Global.getId()));
-        if(secondsPLayed > 2000) {
+        if(secondsPLayed > 20000) {
             Toast.makeText(getApplicationContext(), "You have successfully completed the TIME PLAYED Achivement!" + secondsPLayed, Toast.LENGTH_LONG).show();
             Global.setAchivement_timePassed(true);
         }
