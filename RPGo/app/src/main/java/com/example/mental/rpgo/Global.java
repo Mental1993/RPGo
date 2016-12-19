@@ -25,6 +25,10 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
         return grifLoad;
     }
 
+    public static void setGrifLoad(int grifLoad) {
+        Global.grifLoad = grifLoad;
+    }
+
     public static void setId(String newId) { id = newId; }
 
     public static String getNogrif() {

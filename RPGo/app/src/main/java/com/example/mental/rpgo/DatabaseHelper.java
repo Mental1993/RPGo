@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 18);
+        super(context, DATABASE_NAME , null, 19);
     }
 
 
@@ -73,7 +73,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + KEYS_LOCATION_TABLE_NAME + " VALUES(4, 'location key 4', 40.99176955914814, 23.727318147985063)");
         db.execSQL("INSERT INTO " + KEYS_LOCATION_TABLE_NAME + " VALUES(5, 'location key 5', 41.305480898681814, 23.24211240620576)");
         db.execSQL("INSERT INTO " + KEYS_LOCATION_TABLE_NAME + " VALUES(6, 'location key 6', 40.819557786070696, 23.7801450408843)");
-        db.execSQL("INSERT INTO " + KEYS_LOCATION_TABLE_NAME + " VALUES(7, 'location key 7', 40.7496, 23.0641)");
 
     }
 

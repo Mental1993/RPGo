@@ -53,6 +53,11 @@
     <string name="riddle2p2">A box appears in front of you</string>
     <string name="riddle3">A locked door</string>
     <string name="riddle3p2">What is old, hard to find and dead?</string>
+    <string name="riddle4">A very complex knot is there, waiting for someone to untie it</string>
+    <string name="riddle5">What is harder to catch the faster you run?</string>
+    <string name="riddle5p2">I don\'t have eyes, but once I did see. Once I had thoughts, but now I\'m white and empty.</string>
+    <string name="riddle5p3">Which vehicle is spelled the same forwards and backwards?</string>
+    <string name="submit">Submit</string>
     />
 
 
