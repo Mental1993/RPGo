@@ -51,7 +51,7 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     {
         if(rawResult.getText().equals("grifos1")) {
             if(Integer.parseInt(Global.getNogrif()) == 1) {
-                startActivity(new Intent(Scanner.this, grifos1.class));
+                startActivity(new Intent(Scanner.this, grifoi.class));
             }else {
                 startActivity(new Intent(Scanner.this, Buttons.class));
                 Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
@@ -59,7 +59,7 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         }
         else if(rawResult.getText().equals("grifos2")) {
             if(Integer.parseInt(Global.getNogrif()) == 2 ) {
-                startActivity(new Intent(Scanner.this, grifos2.class));
+                startActivity(new Intent(Scanner.this, grifoi.class));
             }else {
                 startActivity(new Intent(Scanner.this, Buttons.class));
                 Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
@@ -67,14 +67,14 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         }
         else if(rawResult.getText().equals("grifos3")) {
             if(Integer.parseInt(Global.getNogrif()) == 3) {
-                startActivity(new Intent(Scanner.this, grifos3.class));
+                startActivity(new Intent(Scanner.this, grifoi.class));
             }else {
                 startActivity(new Intent(Scanner.this, Buttons.class));
                 Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
             }
         }else if(rawResult.getText().equals("grifos4")) {
             if(Integer.parseInt(Global.getNogrif()) == 4) {
-                startActivity(new Intent(Scanner.this, grifos4.class));
+                startActivity(new Intent(Scanner.this, grifoi.class));
             }else {
                 startActivity(new Intent(Scanner.this, Buttons.class));
                 Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
@@ -82,7 +82,7 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         }
         else if(rawResult.getText().equals("grifos5")) {
             if(Integer.parseInt(Global.getNogrif()) == 5) {
-                startActivity(new Intent(Scanner.this, grifos5.class));
+                startActivity(new Intent(Scanner.this, grifoi.class));
             }else {
                 startActivity(new Intent(Scanner.this, Buttons.class));
                 Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();

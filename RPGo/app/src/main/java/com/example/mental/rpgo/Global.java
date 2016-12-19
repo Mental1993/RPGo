@@ -15,8 +15,14 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
     private static int keys_count;
     private static List<Location> keys_loc = new ArrayList<Location>();
 
+    private static int grifLoad;
+
     public static String getId() {
         return id;
+    }
+
+    public static int getGrifLoad() {
+        return grifLoad;
     }
 
     public static void setId(String newId) { id = newId; }
