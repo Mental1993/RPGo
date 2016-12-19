@@ -13,16 +13,10 @@
     <string name="activity_buttons_btnScan">SCAN</string>
     <string name="activity_buttons_btnSack">SACK</string>
     <string name="activity_buttons_btnMap">MAP</string>
-    <string name="activity_riddle2_thetext2">TextView</string>
-    <string name="activity_riddle2_btnAnswer2">BUTTON</string>
     <string name="content_main_TextView_Tlog">Log In</string>
     <string name="content_main_TV_pwdforgot">Forgot your password> Click here</string>
     <string name="content_main_btnLogin">GO</string>
     <string name="content_main_btnSignUp">SIGN UP</string>
-    <string name="content_riddle1_TextView_Text">What was Joan of Arc made of?</string>
-    <string name="content_riddle1_TextView_button4">SUBMIT</string>
-    <string name="content_riddle3_TextView_theText3">A locked door</string>
-    <string name="content_riddle3_btnAnswer3">SEND</string>
     <string name="content_user_sign_up_TextView_TV_register">Register</string>
     <string name="content_user_sign_up_TV_username">Username:</string>
     <string name="content_user_sign_up_TV_password">Password:</string>
@@ -31,26 +25,15 @@
     <string name="content_user_sign_up_TV_email">E-mail:</string>
     <string name="content_user_sign_up_TV_str">Not Inserted</string>
     <string name="content_user_sign_up_btnDone">SIGN UP</string>
-    <string name="grifos3_p2">A painting is in front of you, there is a key pad underneath. On the painting it is written:
-        \'Two fathers and two sons sat down to eat eggs for breakfast. They ate exactly three eggs, each person had an egg.\'</string>
-    <string name="grifos3_p3">What is old, hard to find and dead?</string>
-    <string name="title_activity_grifos4">grifos4</string>
-    <string name="grifos4_p2">How many sides has a circle</string>
-    <string name="grifos4_p3">What is always on its way here, but never arrives?</string>
     <string name="password_again">Password again</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="answer_here">Answer Here</string>
     <string name="send">Send</string>
-    <string name="riddle4">The poor have me, the rich need me, and if you eat me, you\'ll die.</string>
-    <string name="riddle5">What is harder to catch the faster you run?</string>
-    <string name="riddle5p2">I don\'t have eyes, but once I did see. Once I had thoughts, but now I\'m white and empty.</string>
-    <string name="riddle5p3">Which vehicle is spelled the same forwards and backwards?</string>
     <string name="pick_lock">Pick Lock</string>
     <string name="knife">Knife</string>
     <string name="log_out"><u>Logout</u></string>
     <string name="e_mail">E-mail</string>
-    <string name="grifos2_p1">I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?</string>
     <string name="username_email">Username/Email</string>
     <string name="login">Login</string>
     <string name="not_registered_yet">Not registered yet?</string>
@@ -63,6 +46,13 @@
     <string name="time_passed">Time Passed</string>
     <string name="status_incomplete">Status : Incomplete</string>
     <string name="status_complete">Status : Complete</string>
+
+
+    <string name="riddle1">What was Joan of Arc made of?</string>
+    <string name="riddle2">I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?</string>
+    <string name="riddle2p2">A box appears in front of you</string>
+    <string name="riddle3">A locked door</string>
+    <string name="riddle3p2">What is old, hard to find and dead?</string>
     />
 
 
