@@ -47,8 +47,9 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
             int i;
             @Override
             public void onLocationChanged(Location location) {
+                //Toast.makeText(getApplicationContext(), "Location changed")
                 for(i=0; i<Global.getKeys_loc().size(); i++) {
-                    if(location.distanceTo(Global.getKeys_loc().get(i)) < 5000) {
+                    if(location.distanceTo(Global.getKeys_loc().get(i)) < 50) {
                         mydb.setLoc_visited(Global.getId(), mydb.getLoc_visited(Global.getId()) + 1);
                         if(mydb.getLoc_visited(Global.getId()) > 2) {
                             if(Global.getAchivement_locVisited() != true) {
@@ -62,7 +63,6 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                                 Global.setAchivement_keysCollected(true);
                                 Toast.makeText(getApplicationContext(), "You have completed keys collected achivement", Toast.LENGTH_LONG).show();
                             }
-
                         }
                         if(mydb.deleteKeys_loc(i+1)) {
                             Global.getKeys_loc().remove(i);
