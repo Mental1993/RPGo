@@ -45,6 +45,9 @@
             android:name=".Map"
             android:label="TheMap" />
         <activity
+            android:name=".grifoi"
+            android:label="Riddles" />
+        <activity
             android:name=".Scanner"
             android:label="Scanner"
             android:theme="@style/AppTheme.NoActionBar" />

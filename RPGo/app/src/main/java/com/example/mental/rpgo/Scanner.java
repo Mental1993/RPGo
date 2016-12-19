@@ -50,49 +50,23 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     public void handleResult(Result rawResult)
     {
         if(rawResult.getText().equals("grifos1")) {
-            if(Integer.parseInt(Global.getNogrif()) == 1) {
-                startActivity(new Intent(Scanner.this, grifoi.class));
-            }else {
-                startActivity(new Intent(Scanner.this, Buttons.class));
-                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
-            }
+            Global.setGrifLoad(1);
         }
         else if(rawResult.getText().equals("grifos2")) {
-            if(Integer.parseInt(Global.getNogrif()) == 2 ) {
-                startActivity(new Intent(Scanner.this, grifoi.class));
-            }else {
-                startActivity(new Intent(Scanner.this, Buttons.class));
-                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
-            }
+            Global.setGrifLoad(2);
         }
         else if(rawResult.getText().equals("grifos3")) {
-            if(Integer.parseInt(Global.getNogrif()) == 3) {
-                startActivity(new Intent(Scanner.this, grifoi.class));
-            }else {
-                startActivity(new Intent(Scanner.this, Buttons.class));
-                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
-            }
+            Global.setGrifLoad(3);
         }else if(rawResult.getText().equals("grifos4")) {
-            if(Integer.parseInt(Global.getNogrif()) == 4) {
-                startActivity(new Intent(Scanner.this, grifoi.class));
-            }else {
-                startActivity(new Intent(Scanner.this, Buttons.class));
-                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
-            }
+            Global.setGrifLoad(4);
         }
         else if(rawResult.getText().equals("grifos5")) {
-            if(Integer.parseInt(Global.getNogrif()) == 5) {
-                startActivity(new Intent(Scanner.this, grifoi.class));
-            }else {
-                startActivity(new Intent(Scanner.this, Buttons.class));
-                Toast.makeText(getApplicationContext(), "This is not the riddle you are looking for. Find riddle " + Global.getNogrif(), Toast.LENGTH_LONG).show();
-            }
+            Global.setGrifLoad(5);
         }
         else {
             Toast.makeText(getApplicationContext(), "Can't identify this QR code", Toast.LENGTH_SHORT).show();
         }
-
-        finish();
+        startActivity(new Intent(Scanner.this,grifoi.class));
     }
 
 }
