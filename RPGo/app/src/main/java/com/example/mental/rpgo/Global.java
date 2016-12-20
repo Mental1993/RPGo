@@ -13,6 +13,7 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
     private static String Nogrif ;
     private static boolean achivement_timePassed = false, achivement_locVisited = false, achivement_riddlesSolved = false, achivement_keysCollected;
     private static int keys_count;
+    private static int image;
     private static List<Location> keys_loc = new ArrayList<Location>();
 
     private static int grifLoad;
@@ -57,5 +58,12 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
 
     public static List<Location> getKeys_loc() {
         return keys_loc;
+    }
+    public static int getImage() {
+        return image;
+    }
+
+    public static void setImage(int image) {
+        Global.image = image;
     }
 }
