@@ -36,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_KEYS = "keys_count";
     public static final String USER_COLUMN_KEYS_TIMESTAMP = "keys_timestamp";
     public static final String USER_COLUMN_LOC_VISITED = "loc_visited";
+    public static final String USER_COLUMN_IMAGE = "image";
 
     public static final String ACHIVEMENT_COLUMN_ID = "ach_id";
     public static final String ACHIVEMENT_COLUMN_NAME = "ach_name";
@@ -225,6 +226,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(USER_COLUMN_KEYS_TIMESTAMP, keys_timestamp);
         values.put(USER_COLUMN_NOGRIF, 1);
         values.put(USER_COLUMN_TIMESTAMP, timestamp);
+        values.put(USER_COLUMN_IMAGE, 0);
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -262,6 +264,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }else {
             return false;
         }
+    }
+    public boolean insertImage(int x, int id){
+
+        boolean imageSuccessful=false;
+
+        ContentValues values = new ContentValues();
+        values.put(USER_COLUMN_IMAGE, x);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        imageSuccessful = db.update(USER_TABLE_NAME,values, " id= " + id, null) > 0;
+
+        return imageSuccessful;
+    }
+    public Cursor getImage(String id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_IMAGE+ " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_ID+ "='"+id+"'",null);
+
+        return res;
     }
 
 }
