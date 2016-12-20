@@ -3,12 +3,13 @@ package com.example.mental.rpgo;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.example.mental.rpgo.R.id.image;
+
 public class Buttons extends AppCompatActivity {
 
     Button scanner,sack,map, achivements;
@@ -24,6 +27,8 @@ public class Buttons extends AppCompatActivity {
     ProgressBar PB_riddle;
     DatabaseHelper mydb;
     Keys key;
+    int imageNum;
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +108,7 @@ public class Buttons extends AppCompatActivity {
                         .show();
             }
         });
+        picSetter();
     }
 
     @Override
@@ -135,5 +141,36 @@ public class Buttons extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "You have successfully completed the TIME PLAYED Achivement!" + secondsPLayed, Toast.LENGTH_LONG).show();
             Global.setAchivement_timePassed(true);
         }
+    }
+
+    public void picSetter(){
+        int num=0;
+        DatabaseHelper mydb= new DatabaseHelper(this);
+
+        Cursor cs = mydb.getImage(Global.getId());
+        if ((cs != null) && (cs.moveToFirst())) {
+            imageNum = cs.getInt(cs.getColumnIndex(DatabaseHelper.USER_COLUMN_IMAGE));
+
+        }
+        cs.close();
+        mydb.close();
+
+        num = imageNum;
+            if (num==0){
+                image.setImageResource(R.drawable.mario);
+            }
+
+            if (num == 1) {
+                image.setImageResource(R.drawable.luigi);
+            }
+
+            if (num == 2) {
+                image.setImageResource(R.drawable.peach);
+            }
+
+            if (num == 3) {
+                image.setImageResource(R.drawable.rosalina);
+
+            }
     }
 }
