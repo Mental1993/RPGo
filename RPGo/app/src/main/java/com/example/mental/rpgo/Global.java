@@ -17,6 +17,8 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
 
     private static int grifLoad;
 
+    private static int image;
+
     public static String getId() {
         return id;
     }
@@ -57,5 +59,13 @@ public class Global{ //boh8itikh klassi opou mpainoun oi static metablites
 
     public static List<Location> getKeys_loc() {
         return keys_loc;
+    }
+
+    public static int getImage() {
+        return image;
+    }
+
+    public static void setImage(int image) {
+        Global.image = image;
     }
 }
