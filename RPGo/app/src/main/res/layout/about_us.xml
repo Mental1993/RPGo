@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:baselineAligned="false"
+    android:background="#FFFFFFFF">
+
+    <TextView
+        android:text="TextView"
+        android:id="@+id/textView"
+        android:layout_weight="0.03"
+        tools:text="About Us "
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:paddingRight="50dp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="257dp"
+        android:layout_height="93dp"
+        android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_weight="0.5"
+            tools:text="This is our attempt in creating andriod application.We really hope that you having a good time by using our app."
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:text="Back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Back"
+            android:layout_weight="0.03" />
+
+    </LinearLayout>
+
+</LinearLayout>

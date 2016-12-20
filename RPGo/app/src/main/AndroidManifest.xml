@@ -55,6 +55,7 @@
         <activity android:name=".sack" />
         <activity android:name=".Forgot_password" />
         <activity android:name=".IntroSequenceActivity" />
+		<activity android:name=".AboutUs" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
