@@ -45,6 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String KEYS_LOCATION_COLUMN_NAME = "keys_loc_name";
     public static final String KEYS_LOCATION_COLUMN_LAT = "keys_loc_lat";
     public static final String KEYS_LOCATION_COLUMN_LNG = "keys_loc_lng";
+    public static final String USER_COLUMN_IMAGE ="image" ;
 
 
     public DatabaseHelper(Context context) {
@@ -262,6 +263,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }else {
             return false;
         }
+    }
+
+    public Cursor getImage(String id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_IMAGE+ " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_ID+ "='"+id+"'",null);
+
+        return res;
     }
 
 }
