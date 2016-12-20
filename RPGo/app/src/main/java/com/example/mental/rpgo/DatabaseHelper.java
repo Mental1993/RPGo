@@ -264,4 +264,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void insertImage(int num, int id) {
+    }
 }
