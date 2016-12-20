@@ -66,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("cat", player_nogrif);
                     gl.setId(player_Id);
                     gl.setNogrif(player_nogrif);
+                    if(player_nogrif.equals("-1"))/// new
+                    {
+                        Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(com.example.mental.rpgo.MainActivity.this, CharSetUp.class);
+                        startActivity(intent);/// new
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Successful Login", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(com.example.mental.rpgo.MainActivity.this, Buttons.class);
+
+                        startActivity(intent);}
                     Intent intent = new Intent(MainActivity.this, Buttons.class);
                     mydb.close();
                     startActivity(intent);
