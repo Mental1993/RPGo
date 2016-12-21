@@ -265,6 +265,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean insertImage(int x, int id){
+
+        boolean imageSuccessful=false;
+
+        ContentValues values = new ContentValues();
+        values.put(USER_COLUMN_IMAGE, x);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        imageSuccessful = db.update(USER_TABLE_NAME,values, " id= " + id, null) > 0;
+
+        return imageSuccessful;
+    }
+
     public Cursor getImage(String id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "SELECT " + USER_COLUMN_IMAGE+ " FROM " + USER_TABLE_NAME + " WHERE " + USER_COLUMN_ID+ "='"+id+"'",null);
