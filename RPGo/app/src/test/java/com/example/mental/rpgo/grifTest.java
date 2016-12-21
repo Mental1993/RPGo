@@ -49,4 +49,13 @@ public class grifTest extends TestCase{
         }
         assertEquals(cor,trg);
     }
+    @Test
+    public void testTrim(){
+
+        String sol3="     bat    ";
+        if(sol3.trim().equals("bat")){
+            cor=true;
+        }
+        assertEquals(cor,trg);
+    }
 }
