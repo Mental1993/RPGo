@@ -79,6 +79,20 @@ public class dbTests extends TestCase {
             assertEquals(upd,trg);
         }
     }
+    @Test
+    public void testGetImage(){
+        boolean gotImg;
+        String id="1";
+        Cursor cs= db.getImage(id);
+        if((cs!=null) && (cs.moveToFirst())){
+            gotImg=true;
+        }
+        else{ 
+            gotImg=false;
+        }
+        assertEquals(gotImg, trg);
+    }
+
 
     @After
     public void tearDown() throws Exception {
