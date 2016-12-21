@@ -21,8 +21,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:id="@+id/mainText"
-        android:text="You have beaten the game"
-        android:textSize="20sp" />
+        android:text="You have beaten the game" />
 
     <ImageView
         android:layout_width="match_parent"
