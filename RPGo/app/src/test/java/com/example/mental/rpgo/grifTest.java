@@ -49,4 +49,13 @@ public class grifTest extends TestCase{
         }
         assertEquals(cor,trg);
     }
+    @Test
+    public void testLowerCase(){
+        String sol3="BAT";
+        if(sol3.toLowerCase().equals("bat")){
+            cor=true;
+        }
+        assertEquals(cor,trg);
+    }
+
 }
