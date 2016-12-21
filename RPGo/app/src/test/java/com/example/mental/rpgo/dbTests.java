@@ -87,6 +87,10 @@ public class dbTests extends TestCase {
     }
     @Test
     public void testInsertImage(){
+        boolean imgsuc;
+        int num=0;
+        int id=1;
+        imgsuc=db.insertImage(num,id);
         if(imgsuc)
         {
             assertEquals(imgsuc,trg);
