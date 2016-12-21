@@ -215,17 +215,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insert_user(String name, String pwd, String newemail, int keys_count, int loc_visited, double keys_timestamp, double timestamp) {
+    public boolean insert_user(String name, String pwd, String newemail, double keys_timestamp) {
         boolean insertSuccessful = false;
         ContentValues values = new ContentValues();
         values.put(USER_COLUMN_NAME, name);
         values.put(USER_COLUMN_PASSWORD, pwd);
         values.put(USER_COLUMN_EMAIL, newemail);
-        values.put(USER_COLUMN_KEYS, keys_count);
-        values.put(USER_COLUMN_LOC_VISITED, loc_visited);
+        //values.put(USER_COLUMN_KEYS, keys_count);
+       // values.put(USER_COLUMN_LOC_VISITED, loc_visited);
         values.put(USER_COLUMN_KEYS_TIMESTAMP, keys_timestamp);
         values.put(USER_COLUMN_NOGRIF, 1);
-        values.put(USER_COLUMN_TIMESTAMP, timestamp);
+      //  values.put(USER_COLUMN_TIMESTAMP, timestamp);
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -263,6 +263,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }else {
             return false;
         }
+    }
+
+    public boolean insertImage(int x, int id){
+
+        boolean imageSuccessful=false;
+
+        ContentValues values = new ContentValues();
+        values.put(USER_COLUMN_IMAGE, x);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        imageSuccessful = db.update(USER_TABLE_NAME,values, " id= " + id, null) > 0;
+
+        return imageSuccessful;
     }
 
     public Cursor getImage(String id){
