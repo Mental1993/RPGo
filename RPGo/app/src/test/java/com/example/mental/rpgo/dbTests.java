@@ -85,4 +85,13 @@ public class dbTests extends TestCase {
         db.close();
         super.tearDown();
     }
+    @Test
+    public void testInsertImage(){
+        if(imgsuc)
+        {
+            assertEquals(imgsuc,trg);
+        }else{
+            assertEquals(imgsuc,trg);
+        }
+    }
 }
