@@ -264,7 +264,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-    
+
     public boolean insertImage(int x, int id){
 
         boolean imageSuccessful=false;
