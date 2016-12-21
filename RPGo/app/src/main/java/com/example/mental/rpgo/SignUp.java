@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,10 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.concurrent.TimeUnit;
-
-import static android.graphics.Color.GRAY;
 
 /**
  * Created by Dimitris on 14/11/2016.
@@ -120,7 +115,7 @@ public class SignUp extends AppCompatActivity {
                 String email = ET_email.getText().toString();
                 isDuplicateName = mydb.check_duplicate("name", name);
                 isDuplicateEmail = mydb.check_duplicate("email", email);
-                isOK= mydb.insert_user(name, pwd, email, 0, 0, Global.KEYS_REGENERATE_INTERVAL, TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+                isOK= mydb.insert_user(name, pwd, email, Global.KEYS_REGENERATE_INTERVAL);
                 if(isOK && !isDuplicateName && !isDuplicateEmail)
                 {
                     Toast.makeText(getApplicationContext(), "Successful Sign up!", Toast.LENGTH_SHORT).show();
