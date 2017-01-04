@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This class inclues all the logic behild the riddles and their solution.
+ */
 
 public class grifoi extends AppCompatActivity {
 
@@ -19,6 +22,13 @@ public class grifoi extends AppCompatActivity {
     Boolean upd;
     int grifLoad; //ari8mos grifou pou prepei na forto8ei
 
+    /**
+     * This function starts when the grifoi activity loads.
+     * Loads the corresponding layout
+     * Instantiates all the widgets
+     * Depending on the current user's riddle, the corresponding riddle is loaded.
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,6 +136,9 @@ public class grifoi extends AppCompatActivity {
         }
     }
 
+    /**
+     * Part 2 of each riddle (If exists)
+     */
     public void part2() { //se merika qr pros8etoyme perissoterous grifous gia auksisi dyskolias
         E_Answer.setText("");
 
@@ -185,7 +198,10 @@ public class grifoi extends AppCompatActivity {
         }
     }
 
-        public void part3() {
+    /**
+     * Part 3 of each riddle (If exists)
+     */
+     public void part3() {
             E_Answer.setText("");
             RiddleText.setText(getResources().getString(R.string.riddle5p3));
             btn_Answer.setOnClickListener(new View.OnClickListener() {
@@ -199,12 +215,14 @@ public class grifoi extends AppCompatActivity {
                     else {
                         Toast.makeText(getApplicationContext(), "So close to the end, yet you are failing", Toast.LENGTH_SHORT).show();
                     }
-                }
-            });
+                }});
 
-        }
+     }
 
 
+    /**
+     * Updates the current riddle of the user.
+     */
     public void dbUpdate() {
 
         mydb = new DatabaseHelper(grifoi.this);

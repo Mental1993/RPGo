@@ -11,7 +11,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.Random;
 
 /**
- * Created by Mental on 17/12/2016.
+ * This class handles the Keys and their location.
+ * @author Mental
+ * @version 1.0
  */
 
 public class Keys {
@@ -21,16 +23,29 @@ public class Keys {
     private String name;
 
 
-    //Setters and Getters
+    /**
+     * Sets the {@link String} instance of the keys location name
+     * @param name String: The keys location name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets the {@link String} instance of the keys location name
+     * @return The {@link String} instance of the keys location name
+     */
     public String getName() {
         return name;
     }
 
 
+    /**
+     * Generates a random keys location
+     * @param map GoogleMap: The GoogleMap on which the keys location wil be displayed
+     * @param icon Bitmap: The incon of the keys location
+     * @param i int: index of keys location array
+     */
     public void generateKey(GoogleMap map, Bitmap icon, int i) {
         Location loc = Global.getKeys_loc().get(i);
         LatLng pos = new LatLng(loc.getLatitude(), loc.getLongitude());
@@ -41,7 +56,10 @@ public class Keys {
         );
     }
 
-    //Generate a random location fairly close to the user's location
+    /**
+     * Gererates a random location
+     * @return A {@link Location} instance of the random location
+     */
     public Location getRandomLocation() {
         Random lat = new Random();
         double lowLat = 40.5000000;

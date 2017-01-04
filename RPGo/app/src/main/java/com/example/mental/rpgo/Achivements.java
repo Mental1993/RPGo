@@ -7,12 +7,27 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * Contains the Achivement activity. Inside, the user can check each achivement's status(Completed or Incomplete)
+ *
+ * @author Mental
+ * @version 1.0
+ */
+
 public class Achivements extends AppCompatActivity {
 
     TextView TV_Ach_1_status, TV_Ach_2_status, TV_Ach_3_status, TV_Ach_4_status;
     List<AchivementObject> achivementsList;
     DatabaseHelper db;
 
+
+    /**
+     * Called when the Achivement activity is loaded.
+     * Calles the corresponding xml layout.
+     * Instantiates a DatabaseHelper object and all the layout's widgets
+     * Fills the TextViews with each achivement and it's status. Information is imported from the database
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

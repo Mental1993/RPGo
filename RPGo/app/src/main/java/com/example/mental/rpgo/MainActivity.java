@@ -16,6 +16,11 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This is the MainActivity, it is the first class to be called everytime the application starts
+ * It is the login screen of the application and handles all the logic behild it
+ *
+ */
 public class MainActivity extends AppCompatActivity {
     EditText ETuser,ETpwd;
     TextView TV_pwdforgot, TV_signup;
@@ -26,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
     Global gl;
     String username_entered, password_entered, email_entered;
 
+    /**
+     * This is the first function to be called after the MainActivity  activity is called.
+     * Initializes widgets
+     * Handles the login system. If the credentials ebeterd are correct, the user is prompt to the main menu, if not, a proper message is displayed.
+     * Gives the user the ability to sign up, and remember his password.
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -105,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Boolean exit = false;
+
+    /**
+     * Called when the back button of the smartphone is clicked.
+     * Exists the application after a short confirmation
+     */
     @Override
     public void onBackPressed() {
         if (exit) {

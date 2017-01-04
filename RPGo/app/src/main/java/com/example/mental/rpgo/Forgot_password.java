@@ -1,8 +1,6 @@
 package com.example.mental.rpgo;
 
-import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This class handles the Forgot Password functionality.
+ * @author Mental
+ * @version 1.1
+ */
 public class Forgot_password extends AppCompatActivity {
 
     TextView TV_username, TV_email;
@@ -20,6 +23,13 @@ public class Forgot_password extends AppCompatActivity {
     DatabaseHelper dbHelper;
 
 
+    /**
+     * This is the first function to be called when the Forgot_password activity is loaded.
+     * Initializes the widgets
+     * Askes user to enter his username and Email
+     * If they are correct, the password is shown, if not, display a proper message
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

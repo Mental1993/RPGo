@@ -15,7 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by Dimitris on 14/11/2016.
+ * This class witch handles the sign up of the user
+ * @author Mental
+ * @version 1.1
  */
 
 public class SignUp extends AppCompatActivity {
@@ -26,6 +28,14 @@ public class SignUp extends AppCompatActivity {
     DatabaseHelper mydb;
     Keys key;
 
+    /**
+     * This is the first function to be called after the SignUp activity is called
+     * initializes widgets
+     * Sets the corresponding xml layout for the activity
+     * Adds a text Changed Listener
+     * Handles the Sign up functionality
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,6 +145,9 @@ public class SignUp extends AppCompatActivity {
 
     }
 
+    /**
+     * Called when the back button is pressed
+      */
     @Override
     public void onBackPressed(){
 

@@ -9,7 +9,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 /**
- * Created by angel on 20/12/2016.
+ * This class handles the character icon selection from the user, and stores the icon into the database
+ * @author Mental
+ * @version 1.0
  */
 
 public class CharSetUp extends AppCompatActivity {
@@ -20,6 +22,14 @@ public class CharSetUp extends AppCompatActivity {
     Button Bselect;
     DatabaseHelper mydb;
 
+    /**
+     * This is the first function to be called, when the CharSetUp activity is loaded.
+     * Sets the corresponding xml layout
+     * Initializes widgets
+     * Click listeners for right, left and select buttons
+     * Stores the image into the database
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +77,9 @@ public class CharSetUp extends AppCompatActivity {
 
     }
 
+    /**
+     * Loads the image that the user has selected
+     */
     public void picLoader() {
         if (num==0){
             image.setImageResource(R.drawable.mario);

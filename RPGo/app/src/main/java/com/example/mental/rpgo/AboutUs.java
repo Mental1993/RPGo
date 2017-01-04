@@ -8,13 +8,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 /**
- * Created by alexlav on 14.12.2016.
+ * Contains the About us Activity. Information about the application are stored here
+ *
+ * @author Mental
+ * @version 1.0
  */
-
 public class AboutUs extends AppCompatActivity {
 
     Button Back;
 
+    /**
+     *
+     * Called when the About us activity is loaded.
+     * Loads the corresponding xml layout and instantiates the Back button
+     *
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     * @param persistentState PersistableBundle: if the activity is being re-initialized after previously being shut down or powered off then this Bundle contains the data it most recently supplied to outPersistentState in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
@@ -22,6 +32,9 @@ public class AboutUs extends AppCompatActivity {
         Back = (Button) findViewById(R.id.Back);
     }
 
+    /**
+     * Called when the user presses the back button
+     */
     @Override
     public void onBackPressed() {
 

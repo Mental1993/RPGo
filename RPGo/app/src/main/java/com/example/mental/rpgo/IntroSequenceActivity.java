@@ -21,13 +21,21 @@ import static com.example.mental.rpgo.R.id.TV_logout;
 import static com.example.mental.rpgo.R.id.TV_mainenu;
 
 /**
- * Created by Dimitris on 12/12/2016.
+ * This class handles the tutorial for all the new users. Explains every single button in main menu and it's functionality
+ * @author Mental
+ * @version 1.0
  */
-
 public class IntroSequenceActivity extends ActionBarActivity {
     public TourGuide mTutorialHandler, mTutorialHandler2;
     public Activity mActivity;
 
+    /**
+     * This function is the first to be called after the IntroSequenceActivity activity is called
+     * Initializes widgets
+     * Creates animation
+     * Explains every single button's functionality
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

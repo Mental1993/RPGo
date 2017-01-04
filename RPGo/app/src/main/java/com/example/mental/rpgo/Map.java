@@ -27,6 +27,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
+/**
+ * This class handles the Map section. Loads a Google Maps instance and lets the user know about the locations of interest
+ * @author Mental
+ * @version 1.1
+ */
 public class Map extends FragmentActivity implements OnMapReadyCallback {
 
     private static Context mContext;
@@ -37,6 +42,12 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
     private LocationListener locationListener = null;
 
 
+    /**
+     * This is the first function to be called after the Map activity is loaded.
+     * Initializes widgets
+     * Creates a location Listener
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,9 +120,19 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
     }
 
+    /**
+     * Gets the {@link Context} instance of the current activity's context
+     * @return The {@link Context} instance of the current activity's context
+     */
     public static Context getContext() {
         return mContext;
     }
+
+    /**'
+     * Called when the map is ready
+     * loads all the locations that might interest the user
+     * @param googleMap GoogleMap:
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
 

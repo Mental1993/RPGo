@@ -20,6 +20,12 @@ import java.util.concurrent.TimeUnit;
 
 import static com.example.mental.rpgo.R.id.image;
 
+/**
+ * This is the main menu of the application.Contains the Buttons activity. Inside, the user has the options to find the next riddle, see the achivements list, exit the application and use the Scanner
+ *
+ * @author Mental
+ * @version 1.0
+ */
 public class Buttons extends AppCompatActivity {
 
     Button scanner,sack,map, achivements;
@@ -30,6 +36,14 @@ public class Buttons extends AppCompatActivity {
     int imageNum;
     ImageView image;
 
+    /**
+     * Called when the Buttons activity is loaded.
+     * Calles the corresponding xml layout.
+     * Instantiates the widgets, a DatabaseHelper object and a Keys object
+     * Sets an action on each button of the layout
+     *
+     * @param savedInstanceState Bundle: if the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +60,7 @@ public class Buttons extends AppCompatActivity {
         PB_riddle.setMax(5);
         PB_riddle.setProgress(Integer.parseInt(Global.getNogrif())-1);
         TV_riddle_progress.setText(String.valueOf(Integer.parseInt(Global.getNogrif())-1) + "/" + 5);
+        image = (ImageView) findViewById(R.id.image);
         mydb = new DatabaseHelper(this);
         key = new Keys();
 
@@ -111,6 +126,9 @@ public class Buttons extends AppCompatActivity {
         picSetter();
     }
 
+    /**
+     * Called when the user presses the back button of the smartphone.
+     */
     @Override
     public void onBackPressed() {
         AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
@@ -135,6 +153,10 @@ public class Buttons extends AppCompatActivity {
         myAlert.show();
     }
 
+    /**
+     * Calculates the total time passes (in seconds) since the user signed up. If it's more than 1 week, the corresponding achivement is completed.
+     * @param mydb DatabaseHelper: Object of type {@link DatabaseHelper} required
+     */
     public void timePlayedAchivement(DatabaseHelper mydb) {
         double secondsPLayed = ((TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))-mydb.getTimestamp(Global.getId()));
         if(secondsPLayed > 48*3600) {
@@ -143,6 +165,9 @@ public class Buttons extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets the icon that the user has selected, at the bottom left corner of the activity
+     */
     public void picSetter(){
         int num=0;
         DatabaseHelper mydb= new DatabaseHelper(this);
